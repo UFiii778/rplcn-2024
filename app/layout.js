@@ -14,8 +14,8 @@ const ovo = Ovo({
 });
 
 export const metadata = {
-  title: "Luthfi's Portofolio",
-  description: "Personal Website",
+  title: "RPLG ICN",
+  description: "RPLG 2024-2027",
   icons: {
     icon: [
       {

@@ -10,7 +10,7 @@ import DriftWall from "./reactbits/DriftWall";
 
 // 1. Sesuaikan properti menjadi 'title' & pastikan path image selalu valid
 const items = [
-    { title: "Me", image: assets.mainMe?.src || assets.mainMe },
+    { title: "Me", image: assets.mainMe?.src || assets.mainMe, },
     { title: "Camera Man", image: assets.CameraMan?.src || assets.CameraMan },
     { title: "Rider", image: assets.Rider?.src || assets.Rider },
     { title: "Yellow Vibes", image: assets.meOnyellow?.src || assets.meOnyellow },

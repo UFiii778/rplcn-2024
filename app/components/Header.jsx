@@ -15,7 +15,7 @@ const Header = () => {
                 scrollHint="Scroll inside the frame"
                 useWindowScroll
             >
-                <h2 className="text-white">Every pixel, everywhere</h2>
+                <h2 className="text-white">We Are From SMK ICB Cinta Niaga</h2>
                 <h4 className="text-white">The frame opens up as you scroll and hands the whole stage to your media.</h4>
             </ScrollExpand>
         </div>

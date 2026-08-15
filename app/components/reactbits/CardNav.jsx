@@ -40,7 +40,7 @@ const CardNav = ({
         contentEl.offsetHeight;
 
         const topBar = 60;
-        const padding = 16;
+        const padding = 24;
         const contentHeight = contentEl.scrollHeight;
 
         contentEl.style.visibility = wasVisible;
@@ -48,7 +48,9 @@ const CardNav = ({
         contentEl.style.position = wasPosition;
         contentEl.style.height = wasHeight;
 
-        return topBar + contentHeight + padding;
+        // Membatasi tinggi maksimal menu mobile agar tidak lebih tinggi dari layar HP
+        const maxHeight = window.innerHeight - 40;
+        return Math.min(topBar + contentHeight + padding, maxHeight);
       }
     }
     return 260;
@@ -59,7 +61,7 @@ const CardNav = ({
     if (!navEl) return null;
 
     gsap.set(navEl, { height: 60, overflow: 'hidden' });
-    gsap.set(cardsRef.current, { y: 50, opacity: 0 });
+    gsap.set(cardsRef.current, { y: 30, opacity: 0 });
 
     const tl = gsap.timeline({ paused: true });
 
@@ -69,7 +71,7 @@ const CardNav = ({
       ease
     });
 
-    tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.4, ease, stagger: 0.08 }, '-=0.1');
+    tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.3, ease, stagger: 0.06 }, '-=0.15');
 
     return tl;
   };
@@ -133,16 +135,17 @@ const CardNav = ({
 
   return (
     <div
-      className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] max-w-[800px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
+      className={`card-nav-container relative w-full max-w-[800px] mt-4 md:mt-6 ${className}`}
     >
       <nav
         ref={navRef}
-        className={`card-nav ${isExpanded ? 'open' : ''} block h-[60px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
+        className={`card-nav ${isExpanded ? 'open' : ''} block h-[60px] p-0 rounded-2xl shadow-lg relative overflow-hidden will-change-[height] border border-white/20`}
         style={{ backgroundColor: baseColor }}
       >
-        <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[1.1rem] z-[2]">
+        {/* Top bar */}
+        <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between px-3 md:px-4 z-[2]">
           <div
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}
+            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[5px] order-2 md:order-none p-2`}
             onClick={toggleMenu}
             onKeyDown={e => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -157,55 +160,56 @@ const CardNav = ({
             style={{ color: menuColor || '#000' }}
           >
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
+              className={`hamburger-line w-[24px] sm:w-[28px] h-[2px] bg-current transition-transform duration-300 ease-out [transform-origin:50%_50%] ${
+                isHamburgerOpen ? 'translate-y-[3.5px] rotate-45' : ''
               } group-hover:opacity-75`}
             />
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
+              className={`hamburger-line w-[24px] sm:w-[28px] h-[2px] bg-current transition-transform duration-300 ease-out [transform-origin:50%_50%] ${
+                isHamburgerOpen ? '-translate-y-[3.5px] -rotate-45' : ''
               } group-hover:opacity-75`}
             />
           </div>
 
           <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-            <img src={logo} alt={logoAlt} className="logo h-[28px]" />
+            <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px] w-auto object-contain" />
           </div>
 
           <button
             type="button"
-            className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] px-4 items-center h-full font-medium cursor-pointer transition-colors duration-300"
+            className="card-nav-cta-button hidden md:inline-flex border-0 rounded-xl px-4 py-2 items-center font-medium cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 text-sm"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
             Get Started
           </button>
         </div>
 
+        {/* Content Cards */}
         <div
-          className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
+          className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-3 flex flex-col items-stretch gap-2 justify-start z-[1] overflow-y-auto max-h-[calc(100vh-100px)] ${
             isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
-          } md:flex-row md:items-end md:gap-[12px]`}
+          } md:flex-row md:items-end md:gap-[12px] md:overflow-hidden`}
           aria-hidden={!isExpanded}
         >
           {(items || []).slice(0, 3).map((item, idx) => (
             <div
               key={`${item.label}-${idx}`}
-              className="nav-card select-none relative flex flex-col gap-2 p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
+              className="nav-card select-none relative flex flex-col gap-2 p-3 md:p-4 rounded-xl min-w-0 flex-[1_1_auto] h-auto min-h-[55px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
               ref={setCardRef(idx)}
               style={{ backgroundColor: item.bgColor, color: item.textColor }}
             >
-              <div className="nav-card-label font-normal tracking-[-0.5px] text-[18px] md:text-[22px]">
+              <div className="nav-card-label font-medium tracking-tight text-[16px] md:text-[20px]">
                 {item.label}
               </div>
-              <div className="nav-card-links mt-auto flex flex-col gap-[2px]">
+              <div className="nav-card-links mt-auto flex flex-col gap-[4px]">
                 {item.links?.map((lnk, i) => (
                   <a
                     key={`${lnk.label}-${i}`}
-                    className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px]"
-                    href={lnk.href}
+                    className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-200 hover:opacity-70 text-[14px] md:text-[15px]"
+                    href={lnk.href || '#'}
                     aria-label={lnk.ariaLabel}
                   >
-                    <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
+                    <GoArrowUpRight className="nav-card-link-icon shrink-0 text-xs md:text-sm" aria-hidden="true" />
                     {lnk.label}
                   </a>
                 ))}
