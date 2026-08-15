@@ -25,7 +25,6 @@ const GridItem = ({ area, icon, title, description, image }) => {
                                 alt={title}
                                 className="w-full h-full object-cover"
                             />
-                            {/* Overlay gradasi gelap agar teks di atas foto tetap terbaca jelas */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                         </div>
                     )}
