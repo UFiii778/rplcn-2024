@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import CardNav from './reactbits/CardNav';
 import logo from '@/public/icon-dark.png';
+import { text } from 'framer-motion/client';
 
 const Navbar = () => {
     const [hidden, setHidden] = useState(false);
@@ -20,6 +21,14 @@ const Navbar = () => {
     });
 
     const items = [
+        { label: "Home",
+            bgColor: "#1B1722",
+            textColor: "#fff",
+            links: [
+                { label: "Home", ariaLabel: "Us", href: "#" }
+            ]
+        },
+
         {
             label: "About",
             bgColor: "#1B1722",

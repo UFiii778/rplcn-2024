@@ -9,30 +9,6 @@ import { X } from "lucide-react";
 
 const Certificates = () => {
 
-    const [selectedCert, setSelectedCert] = useState(null);
-
-
-    const certificateList = [
-        {
-            title: "RevoU Certificate",
-            description: "Software Engineering Program",
-            imageSrc: assets.cert_revou || assets.user_image,
-            link: "#"
-        },
-        {
-            title: "Dicoding Certificate",
-            description: "Build App with React",
-            imageSrc: assets.cert_react || assets.user_image,
-            link: "#"
-        },
-        {
-            title: "Another Certificate",
-            description: "Professional Certification",
-            imageSrc: assets.cert_full || assets.user_image,
-            link: "#"
-        }
-    ];
-
     const items = [
         { title: "Me", image: assets.mainMe?.src || assets.mainMe },
         { title: "Camera Man", image: assets.CameraMan?.src || assets.CameraMan },
