@@ -1,12 +1,8 @@
 "use client";
 
-import { assets, infoList } from "@/assets/assets";
-import Image from "next/image";
 import React from "react";
-import { motion } from "motion/react";
 import { DiaTextReveal } from "./magicui/ui/DiaTextReveal";
 import CurvedLoop from "./reactbits/CurvedLoop";
-import ScrollVelocity from "./reactbits/ScrollVelocity";
 
 
 const About = () => {
