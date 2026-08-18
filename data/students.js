@@ -19,6 +19,7 @@ export const studentsData = [
     birthdate: "1 Janu", //[cite: 4]
     favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", // murni ID tanpa ?si=...[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
     instagram: "khfesal_", //[cite: 4]
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
@@ -31,6 +32,7 @@ export const studentsData = [
     birthdate: "15 Mei", //[cite: 4]
     favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
     instagram: "shootasheed", //[cite: 4]
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
@@ -43,8 +45,8 @@ export const studentsData = [
     birthdate: "15 Mei", //[cite: 4]
     favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
     instagram: "luthfiiizzz_", //[cite: 4]
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   }
-  // ... bersihkan item murid lainnya cukup ambil ID "3BJe4B8zGnqEdQPMvfVjuS" saja[cite: 4]
 ];

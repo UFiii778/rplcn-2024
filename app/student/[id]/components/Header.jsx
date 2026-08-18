@@ -8,7 +8,7 @@ const Header = ({ student }) => {
   return (
     <header className="w-full relative bg-slate-900 pb-4">
       {/* Banner */}
-      <div className="w-full h-44 sm:h-56 bg-gradient-to-r from-stone-800 to-stone-900 relative overflow-hidden">
+      <div className="w-full h-24 sm:h-36 bg-gradient-to-r from-stone-800 to-stone-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:16px_16px]" />
       </div>
 
