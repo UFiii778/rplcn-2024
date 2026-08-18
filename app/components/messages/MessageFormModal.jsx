@@ -7,7 +7,6 @@ import { studentsData, waliKelas } from "@/data/students";
 export default function MessageFormModal({ selectedRecipientId, onClose, onSuccess }) {
     const allMembers = [waliKelas, ...studentsData];
 
-    // State Form
     const [recipientId, setRecipientId] = useState(selectedRecipientId || allMembers[0].id);
     const [isAnonymous, setIsAnonymous] = useState(true);
     const [message, setMessage] = useState("");
@@ -44,7 +43,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
 
     return (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-white shadow-2xl relative">
+            <div className="bg-stone-900 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-white shadow-2xl relative">
 
                 <div className="flex justify-between items-center mb-6">
                     <h2 className="text-xl font-bold">Kirim Pesan Rahasia 💌</h2>

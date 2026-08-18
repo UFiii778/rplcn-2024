@@ -1,5 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import Navbar from "@/app/components/Navbar";
 import { studentsData, waliKelas } from "@/data/students";
 
 // IMPORT SEMUA KOMPONEN DIBUTUHKAN (Sesuaikan path folder komponen kamu jika berbeda)
@@ -29,6 +30,7 @@ export default async function StudentDetailPage({ params }) {
   return (
     <main className="min-h-screen bg-white text-slate-950 flex flex-col justify-between">
       <div>
+        <Navbar />
         <Header student={student} />
         <About student={student} />
         <Gallery photos={student?.photos} />

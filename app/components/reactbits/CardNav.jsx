@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
+import Link from 'next/link';
 
 const CardNav = ({
   logo,
@@ -8,10 +9,10 @@ const CardNav = ({
   items,
   className = '',
   ease = 'power3.out',
-  baseColor = '#fff',
-  menuColor,
-  buttonBgColor,
-  buttonTextColor
+  baseColor = 'rgba(255, 255, 255, 0.2)',
+  menuColor = '#fff',
+  buttonBgColor = '#38bdf8',
+  buttonTextColor = '#000'
 }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -48,7 +49,6 @@ const CardNav = ({
         contentEl.style.position = wasPosition;
         contentEl.style.height = wasHeight;
 
-        // Membatasi tinggi maksimal menu mobile agar tidak lebih tinggi dari layar HP
         const maxHeight = window.innerHeight - 40;
         return Math.min(topBar + contentHeight + padding, maxHeight);
       }
@@ -134,12 +134,10 @@ const CardNav = ({
   };
 
   return (
-    <div
-      className={`card-nav-container relative w-full max-w-[800px] mt-4 md:mt-6 ${className}`}
-    >
+    <div className={`card-nav-container relative w-full max-w-[800px] mt-4 md:mt-6 ${className}`}>
       <nav
         ref={navRef}
-        className={`card-nav ${isExpanded ? 'open' : ''} block h-[60px] p-0 rounded-2xl shadow-lg relative overflow-hidden will-change-[height] border border-white/20`}
+        className={`card-nav ${isExpanded ? 'open' : ''} block h-[60px] p-0 rounded-2xl shadow-2xl relative overflow-hidden will-change-[height] border border-white/20 backdrop-blur-xl backdrop-saturate-150 transition-colors duration-300`}
         style={{ backgroundColor: baseColor }}
       >
         {/* Top bar */}
@@ -157,7 +155,7 @@ const CardNav = ({
             aria-label={isExpanded ? 'Close menu' : 'Open menu'}
             aria-expanded={isExpanded}
             tabIndex={0}
-            style={{ color: menuColor || '#000' }}
+            style={{ color: menuColor || '#fff' }}
           >
             <div
               className={`hamburger-line w-[24px] sm:w-[28px] h-[2px] bg-current transition-transform duration-300 ease-out [transform-origin:50%_50%] ${
@@ -172,16 +170,18 @@ const CardNav = ({
           </div>
 
           <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-            <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px] w-auto object-contain" />
+            <Link href="/">
+              <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px] w-auto object-contain cursor-pointer" />
+            </Link>
           </div>
 
-          <button
-            type="button"
-            className="card-nav-cta-button hidden md:inline-flex border-0 rounded-xl px-4 py-2 items-center font-medium cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 text-sm"
+          <Link
+            href="/message"
+            className="card-nav-cta-button hidden md:inline-flex border-0 rounded-xl px-4 py-2 items-center font-bold cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 text-xs shadow-md"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
-            Get Started
-          </button>
+            Send Message
+          </Link>
         </div>
 
         {/* Content Cards */}
@@ -194,24 +194,27 @@ const CardNav = ({
           {(items || []).slice(0, 3).map((item, idx) => (
             <div
               key={`${item.label}-${idx}`}
-              className="nav-card select-none relative flex flex-col gap-2 p-3 md:p-4 rounded-xl min-w-0 flex-[1_1_auto] h-auto min-h-[55px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
+              className="nav-card select-none relative flex flex-col gap-2 p-3 md:p-4 rounded-xl min-w-0 flex-[1_1_auto] h-auto min-h-[55px] md:h-full md:min-h-0 md:flex-[1_1_0%] border border-white/10 shadow-lg"
               ref={setCardRef(idx)}
               style={{ backgroundColor: item.bgColor, color: item.textColor }}
             >
-              <div className="nav-card-label font-medium tracking-tight text-[16px] md:text-[20px]">
+              <div className="nav-card-label font-bold tracking-tight text-[15px] md:text-[18px]">
                 {item.label}
               </div>
               <div className="nav-card-links mt-auto flex flex-col gap-[4px]">
                 {item.links?.map((lnk, i) => (
-                  <a
+                  <Link
                     key={`${lnk.label}-${i}`}
-                    className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-200 hover:opacity-70 text-[14px] md:text-[15px]"
+                    className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-200 hover:opacity-70 text-[13px] md:text-[14px]"
                     href={lnk.href || '#'}
+                    onClick={() => {
+                      if (isExpanded) toggleMenu();
+                    }}
                     aria-label={lnk.ariaLabel}
                   >
                     <GoArrowUpRight className="nav-card-link-icon shrink-0 text-xs md:text-sm" aria-hidden="true" />
                     {lnk.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

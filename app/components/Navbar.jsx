@@ -1,81 +1,49 @@
 "use client";
 
-import React, { useState } from 'react';
-import { useScroll, useMotionValueEvent } from 'framer-motion';
+import React from 'react';
 import CardNav from './reactbits/CardNav';
 import logo from '@/public/icon-dark.png';
-import { text } from 'framer-motion/client';
 
 const Navbar = () => {
-    const [hidden, setHidden] = useState(false);
-    const { scrollY } = useScroll();
-
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        const previous = scrollY.getPrevious() ?? 0;
-        
-        if (latest > previous && latest > 50) {
-            setHidden(true);
-        } else {
-            setHidden(false);
-        }
-    });
-
     const items = [
-        { label: "Home",
-            bgColor: "#1B1722",
-            textColor: "#fff",
-            links: [
-                { label: "Home", ariaLabel: "Us", href: "#" }
-            ]
-        },
-
         {
-            label: "About",
-            bgColor: "#1B1722",
-            textColor: "#fff",
+            label: "Main",
+            bgColor: "#111827",
+            textColor: "#ffffff",
             links: [
-                { label: "Company", ariaLabel: "About Company", href: "#about" },
-                { label: "Careers", ariaLabel: "About Careers", href: "#careers" }
+                { label: "Home", ariaLabel: "Home Page", href: "/" }
             ]
         },
         {
-            label: "Projects",
-            bgColor: "#155573",
-            textColor: "#fff",
+            label: "Messages",
+            bgColor: "#1F2937",
+            textColor: "#ffffff",
             links: [
-                { label: "Featured", ariaLabel: "Featured Projects", href: "#work" },
-                { label: "Case Studies", ariaLabel: "Project Case Studies", href: "#gallery" }
+                { label: "Send Message", ariaLabel: "Send Message", href: "/message" }
             ]
         },
         {
-            label: "Contact",
-            bgColor: "#2F293A",
-            textColor: "#fff",
+            label: "Classroom",
+            bgColor: "#0F172A",
+            textColor: "#ffffff",
             links: [
-                { label: "Email", ariaLabel: "Email us", href: "#contact" },
-                { label: "Twitter", ariaLabel: "Twitter", href: "https://twitter.com" },
-                { label: "LinkedIn", ariaLabel: "LinkedIn", href: "https://linkedin.com" }
+                { label: "All Students", ariaLabel: "All Students", href: "/student" },
             ]
         }
     ];
 
     return (
-        <header 
-            className={`fixed top-0 left-0 w-full z-[9999] pointer-events-none transition-transform duration-300 ease-in-out ${
-                hidden ? "-translate-y-full" : "translate-y-0"
-            }`}
-        >
+        <header className="fixed top-0 left-0 w-full z-[9999] pointer-events-none">
             <div className="pointer-events-auto w-full flex justify-center px-4">
                 <CardNav
                     logo={logo.src || logo}
-                    logoAlt="Company Logo"
+                    logoAlt="Classroom Logo"
                     items={items}
-                    baseColor="#ffffff"
-                    menuColor="#000000"
-                    buttonBgColor="#111111"
-                    buttonTextColor="#ffffff"
+                    baseColor="rgba(17, 24, 39, 0.65)" // Efek warna kaca gelap
+                    menuColor="#ffffff"
+                    buttonBgColor="#38bdf8"
+                    buttonTextColor="#0f172a"
                     ease="power3.out"
-                    theme="light"
                 />
             </div>
         </header>
