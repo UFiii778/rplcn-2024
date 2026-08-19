@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
 import { studentsData, waliKelas } from "@/data/students";
 
 export default function MessageFormModal({ selectedRecipientId, onClose, onSuccess }) {
@@ -15,29 +14,67 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
     const [senderClass, setSenderClass] = useState("");
     const [loading, setLoading] = useState(false);
 
+    // Honeypot state untuk menjebak bot
+    const [honeypot, setHoneypot] = useState("");
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
 
-        const payload = {
-            recipient_id: recipientId,
-            message,
-            is_anonymous: isAnonymous,
-            sender_name: isAnonymous ? null : senderName,
-            sender_ig: isAnonymous ? null : senderIg,
-            sender_class: isAnonymous ? null : senderClass,
-        };
-
-        const { error } = await supabase.from("messages").insert([payload]);
-
-        setLoading(false);
-        if (error) {
-            alert("Gagal mengirim pesan: " + error.message);
-        } else {
-            alert("Pesan berhasil dikirim!");
+        // 1. Deteksi Bot via Honeypot
+        if (honeypot) {
+            console.warn("Bot detected via honeypot!");
             setMessage("");
+            setSenderName("");
+            setSenderIg("");
+            setSenderClass("");
             if (onSuccess) onSuccess();
             if (onClose) onClose();
+            return;
+        }
+
+        // 2. Validasi Panjang Pesan
+        if (message.trim().length > 500) {
+            alert("Pesan melebihi batas maksimal 500 karakter.");
+            return;
+        }
+
+        setLoading(true);
+
+        try {
+            // 3. Kirim data ke API Route (/api/messages)
+            const response = await fetch("/api/messages", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    recipient_id: recipientId,
+                    message,
+                    is_anonymous: isAnonymous,
+                    sender_name: senderName,
+                    sender_ig: senderIg,
+                    sender_class: senderClass,
+                }),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || "Gagal mengirim pesan.");
+            }
+
+            alert("Pesan berhasil dikirim!");
+            setMessage("");
+            setSenderName("");
+            setSenderIg("");
+            setSenderClass("");
+
+            if (onSuccess) onSuccess();
+            if (onClose) onClose();
+        } catch (err) {
+            alert("Gagal mengirim pesan: " + err.message);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -51,6 +88,17 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
+
+                    {/* Honeypot Field (Diabaikan oleh manusia, diisi oleh bot) */}
+                    <input
+                        type="text"
+                        name="website_url"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                        className="hidden"
+                        tabIndex={-1}
+                        autoComplete="off"
+                    />
 
                     <div>
                         <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
@@ -73,16 +121,18 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                         <button
                             type="button"
                             onClick={() => setIsAnonymous(true)}
-                            className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${isAnonymous ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"
-                                }`}
+                            className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${
+                                isAnonymous ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"
+                            }`}
                         >
                             🔒 Mode Anonim
                         </button>
                         <button
                             type="button"
                             onClick={() => setIsAnonymous(false)}
-                            className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${!isAnonymous ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"
-                                }`}
+                            className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${
+                                !isAnonymous ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"
+                            }`}
                         >
                             👤 Tampilkan Nama
                         </button>
@@ -123,18 +173,22 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                         <textarea
                             rows="4"
                             required
-                            placeholder="Tulis pesan rahasia, kesan, atau ucapan di sini..."
+                            maxLength={500}
+                            placeholder="Tulis pesan rahasia, kesan, atau ucapan di sini... (Maks. 500 karakter)"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 text-sm focus:border-indigo-500 focus:outline-none"
                         />
+                        <div className="text-right text-[11px] text-slate-500 mt-1">
+                            {message.length}/500
+                        </div>
                     </div>
 
                     {/* Submit Button */}
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:opacity-90 transition-all text-sm"
+                        className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:opacity-90 transition-all text-sm disabled:opacity-50"
                     >
                         {loading ? "Mengirim..." : "Kirim Pesan Sekarang 🚀"}
                     </button>

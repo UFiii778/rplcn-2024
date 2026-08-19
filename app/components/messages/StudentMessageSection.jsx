@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { supabase } from "@/lib/supabaseClient";
 import { LockIcon, User } from "lucide-react";
 import { MdDone } from "react-icons/md";
 
@@ -21,25 +20,36 @@ export default function StudentMessageSection({ student }) {
 
     setLoading(true);
 
-    const payload = {
-      recipient_id: student.id, 
-      message: messageText,
-      is_anonymous: isAnonymous,
-      sender_name: isAnonymous ? null : senderName,
-      sender_ig: isAnonymous ? null : senderIg,
-    };
+    try {
+      // Mengirim pesan melalui API Route Next.js (/api/messages)
+      const response = await fetch("/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          recipient_id: student.id,
+          message: messageText,
+          is_anonymous: isAnonymous,
+          sender_name: isAnonymous ? null : senderName,
+          sender_ig: isAnonymous ? null : senderIg,
+        }),
+      });
 
-    const { error } = await supabase.from("messages").insert([payload]);
+      const result = await response.json();
 
-    setLoading(false);
+      if (!response.ok) {
+        throw new Error(result.message || "Gagal mengirim pesan.");
+      }
 
-    if (error) {
-      alert("Gagal mengirim pesan: " + error.message);
-    } else {
       setShowSuccessModal(true);
       setMessageText("");
       setSenderName("");
       setSenderIg("");
+    } catch (error) {
+      alert("Gagal mengirim pesan: " + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -146,7 +156,7 @@ export default function StudentMessageSection({ student }) {
                 disabled={loading}
                 className="w-full md:w-auto px-6 py-3 bg-slate-100 hover:bg-white text-slate-950 font-bold rounded-xl text-xs transition-all shadow-md disabled:opacity-50"
               >
-                {loading ? "Loading" : "Send Your Message!"}
+                {loading ? "Loading..." : "Send Your Message!"}
               </button>
             </div>
           </div>

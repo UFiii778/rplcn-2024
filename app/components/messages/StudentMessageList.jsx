@@ -1,31 +1,36 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabaseClient";
 import { RefreshCcw } from "lucide-react";
 
 export default function StudentMessageList({ studentId, studentName }) {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetch data pesan siswa via API Route
   const fetchStudentMessages = async () => {
+    if (!studentId) return;
     setLoading(true);
-    const { data, error } = await supabase
-      .from("messages")
-      .select("*")
-      .eq("recipient_id", studentId)
-      .order("created_at", { ascending: false });
 
-    if (!error && data) {
-      setMessages(data);
+    try {
+      const response = await fetch(`/api/messages?recipient_id=${studentId}`);
+      const result = await response.json();
+
+      if (response.ok && result.data) {
+        setMessages(result.data);
+      } else {
+        setMessages([]);
+      }
+    } catch (err) {
+      console.error("Gagal mengambil pesan siswa:", err);
+      setMessages([]);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
-    if (studentId) {
-      fetchStudentMessages();
-    }
+    fetchStudentMessages();
   }, [studentId]);
 
   return (
@@ -37,26 +42,25 @@ export default function StudentMessageList({ studentId, studentName }) {
             {messages.length} Messages
           </span>
         </h3>
-        
+
         <button
           onClick={fetchStudentMessages}
-          className=" bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
+          className="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
         >
-          <RefreshCcw className="w-5 h-5" />
+          <RefreshCcw className={`w-5 h-5 ${loading ? "animate-spin" : ""}`} />
         </button>
       </div>
 
       {loading && (
         <div className="text-center py-10 text-slate-500 text-xs">
-          Load your Message !
+          Loading your messages...
         </div>
       )}
 
       {!loading && messages.length === 0 && (
         <div className="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-8 text-center space-y-2">
-          <p className="text-2xl"></p>
           <p className="text-slate-400 text-sm font-medium">
-            There are no messages for you. {studentName}.
+            There are no messages for {studentName}.
           </p>
           <p className="text-slate-600 text-xs">
             Be the first to send a message using the form below!

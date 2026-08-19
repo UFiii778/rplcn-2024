@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { studentsData, waliKelas } from "@/data/students";
-import { supabase } from "@/lib/supabaseClient";
 import { LockIcon, User } from "lucide-react";
 import { FaCheckCircle, FaUserSecret, FaInstagram } from "react-icons/fa";
 
 export default function MessageSection() {
-  const allMembers = [waliKelas, ...studentsData];
+  const rawMembers = [waliKelas, ...studentsData];
+  const allMembers = Array.from(
+    new Map(rawMembers.map((item) => [item.id, item])).values()
+  );
 
   const getRecipientName = (id) => {
     const found = allMembers.find((m) => m.id === id);
@@ -29,14 +31,16 @@ export default function MessageSection() {
 
   const [messages, setMessages] = useState([]);
 
+  // Fetch data dari API Route (/api/messages)
   const fetchMessages = async () => {
-    const { data, error } = await supabase
-      .from("messages")
-      .select("*")
-      .order("created_at", { ascending: false });
-
-    if (!error && data) {
-      setMessages(data);
+    try {
+      const res = await fetch("/api/messages");
+      const result = await res.json();
+      if (res.ok && result.data) {
+        setMessages(result.data);
+      }
+    } catch (err) {
+      console.error("Gagal mengambil data pesan:", err);
     }
   };
 
@@ -57,36 +61,55 @@ export default function MessageSection() {
   const row1Messages = [...displayMessages, ...displayMessages];
   const row2Messages = [...displayMessages, ...displayMessages].reverse();
 
-  // Handle Kirim Pesan
+  // Handle Kirim Pesan via API Route
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Protection: Honeypot check
+    if (honeypot) {
+      setMessageText("");
+      setSenderName("");
+      setSenderIg("");
+      return;
+    }
+
     if (!messageText.trim()) return;
 
     setLoading(true);
 
-    const payload = {
-      recipient_id: recipientId,
-      message: messageText,
-      is_anonymous: isAnonymous,
-      sender_name: isAnonymous ? null : senderName,
-      sender_ig: isAnonymous ? null : senderIg,
-    };
+    try {
+      const response = await fetch("/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          recipient_id: recipientId,
+          message: messageText,
+          is_anonymous: isAnonymous,
+          sender_name: isAnonymous ? null : senderName,
+          sender_ig: isAnonymous ? null : senderIg,
+        }),
+      });
 
-    const { error } = await supabase.from("messages").insert([payload]);
+      const result = await response.json();
 
-    setLoading(false);
+      if (!response.ok) {
+        throw new Error(result.message || "Gagal mengirim pesan.");
+      }
 
-    if (error) {
-      alert("Gagal mengirim pesan: " + error.message);
-    } else {
       setSentToName(getRecipientName(recipientId));
       setShowSuccessModal(true);
 
-      // Reset Form
+      // Reset Form & Re-fetch
       setMessageText("");
       setSenderName("");
       setSenderIg("");
       fetchMessages();
+    } catch (error) {
+      alert("Gagal mengirim pesan: " + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -154,8 +177,8 @@ export default function MessageSection() {
             type="button"
             onClick={() => setIsAnonymous(true)}
             className={`w-28 sm:w-36 h-28 sm:h-36 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-lg ${isAnonymous
-              ? "bg-red-600 ring-4 ring-red-400/50"
-              : "bg-red-800/60 opacity-60 hover:opacity-100"
+                ? "bg-red-600 ring-4 ring-red-400/50"
+                : "bg-red-800/60 opacity-60 hover:opacity-100"
               }`}
           >
             <FaUserSecret className="w-12 h-12 text-white" />
@@ -166,8 +189,8 @@ export default function MessageSection() {
             type="button"
             onClick={() => setIsAnonymous(false)}
             className={`w-28 sm:w-36 h-28 sm:h-36 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-lg ${!isAnonymous
-              ? "bg-teal-500 ring-4 ring-teal-300/50"
-              : "bg-teal-700/60 opacity-60 hover:opacity-100"
+                ? "bg-teal-500 ring-4 ring-teal-300/50"
+                : "bg-teal-700/60 opacity-60 hover:opacity-100"
               }`}
           >
             <User className="w-12 h-12 text-white" />
@@ -223,6 +246,7 @@ export default function MessageSection() {
               <textarea
                 required
                 rows="4"
+                maxLength={500}
                 placeholder="Write your message here..."
                 value={messageText}
                 onChange={(e) => setMessageText(e.target.value)}
