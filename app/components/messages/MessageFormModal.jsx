@@ -14,13 +14,11 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
     const [senderClass, setSenderClass] = useState("");
     const [loading, setLoading] = useState(false);
 
-    // Honeypot state untuk menjebak bot
     const [honeypot, setHoneypot] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // 1. Deteksi Bot via Honeypot
         if (honeypot) {
             console.warn("Bot detected via honeypot!");
             setMessage("");
@@ -32,16 +30,13 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
             return;
         }
 
-        // 2. Validasi Panjang Pesan
         if (message.trim().length > 500) {
-            alert("Pesan melebihi batas maksimal 500 karakter.");
             return;
         }
 
         setLoading(true);
 
         try {
-            // 3. Kirim data ke API Route (/api/messages)
             const response = await fetch("/api/messages", {
                 method: "POST",
                 headers: {
@@ -63,7 +58,6 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                 throw new Error(result.message || "Gagal mengirim pesan.");
             }
 
-            alert("Pesan berhasil dikirim!");
             setMessage("");
             setSenderName("");
             setSenderIg("");
@@ -83,13 +77,11 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
             <div className="bg-stone-900 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-white shadow-2xl relative">
 
                 <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-xl font-bold">Kirim Pesan Rahasia 💌</h2>
                     <button onClick={onClose} className="text-slate-400 hover:text-white font-bold">✕</button>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
 
-                    {/* Honeypot Field (Diabaikan oleh manusia, diisi oleh bot) */}
                     <input
                         type="text"
                         name="website_url"
@@ -125,7 +117,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                                 isAnonymous ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"
                             }`}
                         >
-                            🔒 Mode Anonim
+                             Mode Anonim
                         </button>
                         <button
                             type="button"
@@ -134,11 +126,10 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                                 !isAnonymous ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"
                             }`}
                         >
-                            👤 Tampilkan Nama
+                             Tampilkan Nama
                         </button>
                     </div>
 
-                    {/* Input Nama (Tampil Jika BUKAN Anonim) */}
                     {!isAnonymous && (
                         <div className="space-y-3 pt-2">
                             <input
@@ -168,7 +159,6 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                         </div>
                     )}
 
-                    {/* Input Pesan */}
                     <div>
                         <textarea
                             rows="4"
@@ -184,13 +174,11 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                         </div>
                     </div>
 
-                    {/* Submit Button */}
                     <button
                         type="submit"
                         disabled={loading}
                         className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:opacity-90 transition-all text-sm disabled:opacity-50"
                     >
-                        {loading ? "Mengirim..." : "Kirim Pesan Sekarang 🚀"}
                     </button>
                 </form>
             </div>

@@ -23,20 +23,18 @@ const Certificates = () => {
 
     return (
         <div id="certificates" className="w-full px-[12%] py-16 scroll-mt-20">
-            {/* Heading Section */}
 
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.5 }}>
-                <h4 className="text-center mb-2 text-lg font-Ovo">Achievements</h4>
-                <h2 className="text-center text-5xl font-Ovo">My Certificates</h2>
+                <h4 className="text-center mb-2 text-lg font-Ovo">Memory</h4>
+                <h2 className="text-center text-5xl font-Ovo">Can we?</h2>
                 <p className="text-center text-gray-500 max-w-xl mx-auto mt-4 font-Ovo">
-                    Professional certifications and training programs I have completed to validate my expertise in software development.
+                    Can we be like this forever?
                 </p>
             </motion.div>
 
-            {/* DriftWall Section - Perbaikan Wrapper CSS */}
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

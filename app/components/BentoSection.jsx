@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Box, Settings, Lock, Sparkles, Search, School } from "lucide-react";
+import { Box, Settings, Lock, Sparkles, Search, School, CheckSquare, X, SearchCheck } from "lucide-react";
 import { GlowingEffect } from "./magicui/ui/GlowingEffect";
+import { PiOfficeChairLight } from "react-icons/pi";
 
 const GridItem = ({ area, icon, title, description, image }) => {
     return (
@@ -51,7 +52,6 @@ const GridItem = ({ area, icon, title, description, image }) => {
 export default function BentoSection() {
     return (
         <section className="w-full px-[8%] py-16">
-            {/* Opsional: Judul Section */}
             <div className="text-center mb-10">
                 <h2 className="text-3xl md:text-5xl font-bold text-white dark:text-black">
                     Featured Capabilities
@@ -61,34 +61,34 @@ export default function BentoSection() {
             <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
                 <GridItem
                     area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-                    icon={<Box className="h-5 w-5" />}
-                    title="Full-Stack Web Solutions"
-                    description="Building scalable web apps using React, Express, and modern backend architectures."
+                    icon={<CheckSquare className="h-5 w-5" />}
+                    title="Hello There!"
+                    description="This is the official website for RPLCN 2024, version two."
                 />
                 <GridItem
                     area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
                     icon={<Settings className="h-5 w-5" />}
-                    title="Clean & Efficient Code"
-                    description="Structured codebases prioritizing performance, maintainability, and responsiveness."
+                    title="What a learn?"
+                    description="We learn a lot of things in this class"
                 />
                 <GridItem
                     area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-                    icon={<Lock className="h-5 w-5" />}
-                    title="Secure & Reliable"
-                    description="Implementing best practices for authentication, database security, and API design."
+                    icon={<SearchCheck className="h-5 w-5" />}
+                    title="How close are the relationships in this class?"
+                    description="Growing every day"
                 />
                 <GridItem
                     area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
                     icon={<School className="h-5 w-5" />}
-                    title="Interactive UI/UX"
-                    description="Crafting smooth user experiences with Tailwind CSS and interactive animations."
+                    title="We School in"
+                    description="We go to SMK ICB Bandung, and it's pretty cool"
                     image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShy6VHE-7VigK0UqqMRUQcEJizpLNN-L5IJA&s"
                 />
                 <GridItem
                     area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-                    icon={<Search className="h-5 w-5" />}
-                    title="Project Showcase"
-                    description="Explore our recent projects, open-source work, and ongoing experiments."
+                    icon={<X className="h-5 w-5 text-red-500"/>}
+                    title="How u Feel"
+                    description="I'm late in creating this website."
                 />
             </ul>
         </section>

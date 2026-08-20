@@ -39,7 +39,7 @@ const Navbar = () => {
                     logo={logo.src || logo}
                     logoAlt="Classroom Logo"
                     items={items}
-                    baseColor="rgba(17, 24, 39, 0.65)" // Efek warna kaca gelap
+                    baseColor="rgba(17, 24, 39, 0.65)"
                     menuColor="#ffffff"
                     buttonBgColor="#38bdf8"
                     buttonTextColor="#0f172a"

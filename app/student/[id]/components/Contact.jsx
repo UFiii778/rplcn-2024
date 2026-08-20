@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { BsInstagram, BsGithub, BsEnvelope } from "react-icons/bs";
+import { BsInstagram, BsTwitterX } from "react-icons/bs";
 
 const Contact = ({ student }) => {
   return (
@@ -17,16 +17,18 @@ const Contact = ({ student }) => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white rounded-xl text-sm font-medium transition-all"
             >
-              <BsInstagram className="text-pink-500" />
+              <BsInstagram className="text-pink-500 w-10 h-10" />
               @{student.instagram}
             </a>
           )}
           <a
-            href="mailto:student@example.com"
+            href={`https://x.com/${student.twitterX}`}
+            target="_blank"
+            rel="nooper noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white rounded-xl text-sm font-medium transition-all"
           >
-            <BsEnvelope className="text-sky-400" />
-            Email Me
+            <BsTwitterX className="text-sky-400 w-10 h-10" />
+            {student.twitterX}
           </a>
         </div>
       </div>

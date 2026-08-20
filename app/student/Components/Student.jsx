@@ -1,22 +1,36 @@
 'use client'
 
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { studentsData, waliKelas } from '@/data/students';
+import { Search } from 'lucide-react';
 
 export default function StudentListPage() {
-  return (
-    <div className="min-h-screen bg-white text-black px-4 py-12 sm:px-8">
-      {/* Background Subtle Glow */}
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950 to-slate-950 pointer-events-none" />
+  const [searchQuery, setSearchQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(8);
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header Section */}
-        <header className="text-center mb-16 space-y-3">
-          <span className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-indigo-500/10 text-blue-400 border border-indigo-500/20">
+  const filteredStudents = studentsData.filter((student) =>
+    student.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const displayedStudents = searchQuery
+    ? filteredStudents
+    : filteredStudents.slice(0, visibleCount);
+
+  const handleExpand = () => {
+    setVisibleCount((prev) => Math.min(prev + 8, studentsData.length));
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-100 text-slate-900 px-4 py-12 sm:px-8 relative">
+      <div className="max-w-7xl mx-auto relative z-10 space-y-12">
+        
+        <header className="text-center space-y-3">
+          <span className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-slate-900 text-sky-400 border border-slate-800">
             Class Directory
           </span>
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-slate-700 to-indigo-900">
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-slate-700">
             Meet Our Class
           </h1>
           <p className="text-slate-400 text-sm sm:text-base max-w-md mx-auto">
@@ -24,18 +38,17 @@ export default function StudentListPage() {
           </p>
         </header>
 
-        {/* Hero Card: Wali Kelas */}
-        <section className="mb-16 flex justify-center">
+        <section className="flex justify-center">
           <Link
             href={`/student/${waliKelas.id}`}
-            className="group relative w-full max-w-2xl bg-gradient-to-b from-indigo-500/10 to-slate-900/80 p-[1px] rounded-3xl transition-all duration-300 hover:scale-[1.01]"
+            className="w-full max-w-2xl bg-slate-900 p-[1px] rounded-3xl border border-slate-800"
           >
-            <div className="bg-slate-900/90 backdrop-blur-xl rounded-[23px] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 border border-indigo-500/20 group-hover:border-indigo-500/50 transition-colors">
-              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-indigo-500/30 flex-shrink-0">
-                <Image src={waliKelas.image} alt={waliKelas.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="bg-slate-900 rounded-[23px] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border border-slate-700 flex-shrink-0">
+                <Image src={waliKelas.image} alt={waliKelas.name} fill className="object-cover" />
               </div>
               <div className="text-center sm:text-left space-y-2">
-                <span className="text-[10px] uppercase font-bold tracking-widest bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full">
+                <span className="text-[10px] uppercase font-bold tracking-widest bg-slate-800 text-yellow-300 px-3 py-1 rounded-full">
                   {waliKelas.role}
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white">{waliKelas.name}</h2>
@@ -45,24 +58,97 @@ export default function StudentListPage() {
           </Link>
         </section>
 
-        {/* Grid 31 Murid */}
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {studentsData.map((student) => (
-            <Link
-            key={student.id}
-            href={`/student/${student.id}`}
-            className="group relative bg-slate-900/40 hover:bg-slate-800/60 border border-slate-800 hover:border-blue-500/40 rounded-2xl p-4 flex flex-col items-center text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/5"
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-900 p-4 rounded-2xl border border-slate-800 max-w-5xl mx-auto">
+          <h2 className="text-lg font-bold text-white">Class Members</h2>
+          <div className="relative w-full sm:w-72">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <input
+              type="text"
+              placeholder="Search Member"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-slate-950 text-white pl-9 pr-4 py-2 rounded-xl text-sm border border-slate-800 focus:outline-none focus:border-yellow-500 placeholder-slate-500"
+            />
+          </div>
+        </div>
+
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {displayedStudents.map((student) => (
+            <div
+              key={student.id}
+              className="relative w-full h-[360px] bg-slate-900 rounded-3xl p-5 flex flex-col justify-between items-center overflow-hidden border border-slate-800 shadow-lg"
             >
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden mb-3 border border-slate-700/50 group-hover:border-sky-400 transition-colors">
-                <Image src={student.image} alt={student.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div className="text-center z-10 space-y-1 mt-1 w-full px-2">
+                <h3 className="text-lg font-bold text-white tracking-wide truncate">
+                  {student.name}
+                </h3>
+                <p className="text-[11px] font-medium text-slate-400 tracking-wider uppercase">
+                  {student.role || "Software Engineer"}
+                </p>
               </div>
-              <h3 className="font-semibold text-sm text-slate-900 group-hover: transition-colors line-clamp-1">
-                {student.name}
-              </h3>
-              <p className="text-xs text-slate-500 mt-0.5">@{student.instagram || student.nickname}</p>
-            </Link>
+
+              <div className="absolute inset-0 top-16 bottom-20 flex items-center justify-center overflow-hidden pointer-events-none">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={student.image}
+                    alt={student.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    className="object-cover object-top opacity-90"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-900 to-transparent" />
+                </div>
+              </div>
+
+              <div className="w-full bg-slate-950 border border-slate-800 rounded-2xl p-2.5 flex items-center justify-between z-10">
+                <div className="flex items-center gap-2 min-w-0">
+                  <div className="relative w-7 h-7 rounded-full overflow-hidden border border-slate-700 flex-shrink-0">
+                    <Image
+                      src={student.image}
+                      alt={student.name}
+                      fill
+                      sizes="30px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[11px] font-semibold text-white truncate max-w-[85px]">
+                      @{student.instagram || student.nickname || "student"}
+                    </span>
+                    <span className="text-[9px] text-emerald-400 font-medium flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      Masih Hidup
+                    </span>
+                  </div>
+                </div>
+
+                <Link
+                  href={`/student/${student.id}`}
+                  className="px-3 py-1 bg-sky-600 hover:bg-sky-500 text-white rounded-xl text-xs font-semibold"
+                >
+                  Look
+                </Link>
+              </div>
+            </div>
           ))}
         </section>
+
+        {!searchQuery && visibleCount < filteredStudents.length && (
+          <div className="text-center pt-4">
+            <button
+              onClick={handleExpand}
+              className="px-8 py-3 bg-slate-900 text-slate-200 font-bold text-sm rounded-2xl"
+            >
+              Show More ({visibleCount} of {filteredStudents.length})
+            </button>
+          </div>
+        )}
+
+        {displayedStudents.length === 0 && (
+          <p className="text-center text-slate-500 py-8 text-sm">
+            No member found matching "{searchQuery}".
+          </p>
+        )}
       </div>
     </div>
   );

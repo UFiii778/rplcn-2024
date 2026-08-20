@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Navbar from "@/app/components/Navbar";
 import { studentsData, waliKelas } from "@/data/students";
 
-// IMPORT SEMUA KOMPONEN DIBUTUHKAN (Sesuaikan path folder komponen kamu jika berbeda)
 import Header from "./components/Header";
 import About from "./components/About";
 import Gallery from "./components/Gallery";

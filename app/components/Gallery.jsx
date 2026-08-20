@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 import { BsInstagram } from "react-icons/bs";
 import { assets } from "@/assets/assets";
 import { LayoutGrid } from "./magicui/ui/LayoutGrid";
-// 1. Deklarasi data kartu galeri untuk LayoutGrid
 const cards = [
   {
     id: 1,
@@ -17,7 +16,7 @@ const cards = [
         </p>
       </div>
     ),
-    className: "md:col-span-2 min-h-[300px]", // Mengambil 2 kolom di layar sedang/besar
+    className: "md:col-span-2 min-h-[300px]", 
     thumbnail: assets.Rpls.src || assets.Rpls,
   },
   {
@@ -63,57 +62,42 @@ const cards = [
 
 const Gallery = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.3, delay: 0.5 }}
+    <div
       id="social"
       className="w-full min-h-screen flex flex-col items-center justify-center gap-6 py-20 bg-white"
     >
-      {/* Section Header */}
       <div className="w-11/12 max-w-5xl text-center mx-auto flex flex-col items-center justify-center gap-4">
         <div className="flex flex-wrap items-center justify-center gap-x-2 text-xl md:text-5xl font-Ovo font-medium text-black">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.5 }}
+          <span
             className="inline-block text-3xl sm:text-6xl lg:text-[46px] text-center"
           >
             Beyond the Code
-          </motion.span>
+          </span>
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
-          className="max-w-2xl text-neutral-600 dark:text-neutral-400"
+        <p className="max-w-2xl text-neutral-900 dark:text-neutral-800"
         >
           When I'm not staring at a code editor, I'm out capturing moments and exploring life. Here’s a glimpse of my world.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
+        <div
           className="flex flex-col sm:flex-row items-center gap-4 mt-2 z-10"
         >
           <a
-            href="https://www.instagram.com/luthfiiizzz_?igsh=Nm4xdnE1dmg4aHZy"
+            href="https://www.instagram.com/rplcn24?"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-3 border border-white/20 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white font-semibold hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2"
           >
-            Connect on Instagram <BsInstagram className="w-4 h-4" />
+            Check out our classes <BsInstagram className="w-4 h-4" />
           </a>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Grid Layout Galeri */}
       <div className="w-full max-w-6xl mx-auto">
         <LayoutGrid cards={cards} />
       </div>
-    </motion.div>
+    </div>
   );
 };
 

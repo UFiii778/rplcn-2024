@@ -49,23 +49,26 @@ export default function MessageSection() {
   }, []);
 
   const dummyMessages = [
-    { id: 1, recipient_id: "ahsena-teuku", message: "Semoga sukses terus bro ke depannya!", is_anonymous: true, sender_name: "Anonim" },
-    { id: 2, recipient_id: "luthfi-abdillah", message: "Semangat ngoding React-nya, keren banget web ini!", is_anonymous: false, sender_name: "Faris Sulthan", sender_ig: "faris_sulthan" },
-    { id: 3, recipient_id: "wali-kelas", message: "Terima kasih sudah jadi wali kelas terbaik kami!", is_anonymous: true, sender_name: "Anonim" },
-    { id: 4, recipient_id: "akhtar-raufasha", message: "Proyek kemarin mantap banget bro!", is_anonymous: true, sender_name: "Anonim" },
+    { id: 1, recipient_id: "Semua", message: "Hallo Barudak ICB", is_anonymous: true, sender_name: "Anonim" },
+    { id: 2, recipient_id: "Semua", message: "Jangan Toxic yaa ketika kirim pesan ke kelas ini", is_anonymous: false, sender_name: "Admin", sender_ig: "unsc-uk" },
   ];
 
   const displayMessages = messages.length > 0 ? messages : dummyMessages;
 
-  // Split data untuk baris atas (ke kanan) & baris bawah (ke kiri)
-  const row1Messages = [...displayMessages, ...displayMessages];
-  const row2Messages = [...displayMessages, ...displayMessages].reverse();
+  // Bagi pesan ganjil/genap
+  const row1Raw = displayMessages.filter((_, idx) => idx % 2 === 0);
+  const row2Raw = displayMessages.filter((_, idx) => idx % 2 !== 0);
 
-  // Handle Kirim Pesan via API Route
+  const row1List = row1Raw.length > 0 ? row1Raw : displayMessages;
+  const row2List = row2Raw.length > 0 ? row2Raw : displayMessages;
+
+  // Duplikasi minimal 8x agar antrean kartunya sangat panjang & tidak putus
+  const row1Messages = [...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List];
+  const row2Messages = [...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List];
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Protection: Honeypot check
     if (honeypot) {
       setMessageText("");
       setSenderName("");
@@ -116,40 +119,49 @@ export default function MessageSection() {
   return (
     <section className="w-full max-w-6xl mx-auto py-12 px-4 space-y-16 text-stone-900 relative">
 
-      {/* SECTION 1: MARQUEE CARDS */}
       <div className="space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-center">
           Want to send us a message? Please give it a try.
         </h2>
 
-        <div className="space-y-4 overflow-hidden py-4 relative">
-          <div className="flex items-center gap-4">
+        {/* Menggunakan w-screen dan -mx-4 agar animasi kartu bisa meluncur penuh dari ujung layar kiri ke kanan */}
+        <div className="w-screen relative left-1/2 -translate-x-1/2 space-y-4 overflow-hidden py-4">
+
+          {/* Row 1: Kanan ke Kiri */}
+          <div className="flex overflow-hidden w-full">
             <motion.div
-              className="flex gap-4 flex-nowrap"
-              animate={{ x: ["-50%", "0%"] }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+              className="flex gap-4 flex-nowrap pr-4"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                repeat: Infinity,
+                ease: "linear",
+                duration: 25,
+              }}
             >
               {row1Messages.map((item, idx) => (
                 <MessageCard
-                  key={`r1-${idx}`}
+                  key={`r1-${item.id || idx}-${idx}`}
                   data={item}
                   recipientName={getRecipientName(item.recipient_id)}
                 />
               ))}
             </motion.div>
-            <div className="hidden sm:block text-2xl font-bold pl-4">→</div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="hidden sm:block text-2xl font-bold pr-4">←</div>
+          {/* Row 2: Kiri ke Kanan */}
+          <div className="flex overflow-hidden w-full">
             <motion.div
-              className="flex gap-4 flex-nowrap"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+              className="flex gap-4 flex-nowrap pr-4"
+              animate={{ x: ["-50%", "0%"] }}
+              transition={{
+                repeat: Infinity,
+                ease: "linear",
+                duration: 25,
+              }}
             >
               {row2Messages.map((item, idx) => (
                 <MessageCard
-                  key={`r2-${idx}`}
+                  key={`r2-${item.id || idx}-${idx}`}
                   data={item}
                   recipientName={getRecipientName(item.recipient_id)}
                 />
@@ -161,7 +173,6 @@ export default function MessageSection() {
 
       <hr className="border-slate-800" />
 
-      {/* SECTION 2: FORM INTERAKTIF */}
       <div className="bg-stone-900 rounded-3xl p-6 sm:p-10 space-y-8 shadow-2xl">
         <div className="text-center space-y-2">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-200">
@@ -177,8 +188,8 @@ export default function MessageSection() {
             type="button"
             onClick={() => setIsAnonymous(true)}
             className={`w-28 sm:w-36 h-28 sm:h-36 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-lg ${isAnonymous
-                ? "bg-red-600 ring-4 ring-red-400/50"
-                : "bg-red-800/60 opacity-60 hover:opacity-100"
+              ? "bg-red-600 ring-4 ring-red-400/50"
+              : "bg-red-800/60 opacity-60 hover:opacity-100"
               }`}
           >
             <FaUserSecret className="w-12 h-12 text-white" />
@@ -189,8 +200,8 @@ export default function MessageSection() {
             type="button"
             onClick={() => setIsAnonymous(false)}
             className={`w-28 sm:w-36 h-28 sm:h-36 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-lg ${!isAnonymous
-                ? "bg-teal-500 ring-4 ring-teal-300/50"
-                : "bg-teal-700/60 opacity-60 hover:opacity-100"
+              ? "bg-teal-500 ring-4 ring-teal-300/50"
+              : "bg-teal-700/60 opacity-60 hover:opacity-100"
               }`}
           >
             <User className="w-12 h-12 text-white" />

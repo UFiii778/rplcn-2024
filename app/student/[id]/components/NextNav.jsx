@@ -11,7 +11,7 @@ const NextNav = ({ prevStudent, nextStudent }) => {
           href={`/student/${prevStudent.id}`}
           className="w-full max-w-md py-3 px-6 bg-stone-800 hover:bg-stone-700 border border-stone-600 text-stone-200 text-center font-semibold rounded-xl transition-all shadow-md"
         >
-          ← Murid Sebelumnya: {prevStudent.name}
+          {prevStudent.name}
         </Link>
       )}
 
@@ -20,7 +20,7 @@ const NextNav = ({ prevStudent, nextStudent }) => {
           href={`/student/${nextStudent.id}`}
           className="w-full max-w-md py-3 px-6 bg-stone-800 hover:bg-stone-700 border border-stone-600 text-stone-200 text-center font-semibold rounded-xl transition-all shadow-md"
         >
-          Tombol Ke Murid Selanjutnya: {nextStudent.name} →
+         {nextStudent.name}
         </Link>
       )}
     </section>

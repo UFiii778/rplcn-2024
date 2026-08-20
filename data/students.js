@@ -102,9 +102,87 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "fikri", //[cite: 4]
+    name: "Fikri Malik", //[cite: 4]
+    nickname: "fikri", //[cite: 4]
+    role: "Student / Developer", //[cite: 4]
+    image: assets.profile, //[cite: 3]
+    birthdate: "15 Mei", //[cite: 4]
+    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
+    instagram: "fkrmalik", //[cite: 4]
+    about: "Coding & exploring life beyond the editor." //[cite: 4]
+  },
+  {
+    id: "fio", //[cite: 4]
+    name: "Fiorentio", //[cite: 4]
+    nickname: "Fio", //[cite: 4]
+    role: "Student / Developer", //[cite: 4]
+    image: assets.profile, //[cite: 3]
+    birthdate: "15 Mei", //[cite: 4]
+    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
+    instagram: "luthfiiizzz_", //[cite: 4]
+    about: "Coding & exploring life beyond the editor." //[cite: 4]
+  },
+  {
+    id: "acel", //[cite: 4]
+    name: "Freddrick", //[cite: 4]
+    nickname: "acel", //[cite: 4]
+    role: "Student / Developer", //[cite: 4]
+    image: assets.profile, //[cite: 3]
+    birthdate: "15 Mei", //[cite: 4]
+    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
+    instagram: "luthfiiizzz_", //[cite: 4]
+    about: "Coding & exploring life beyond the editor." //[cite: 4]
+  },
+  {
+    id: "ibnue", //[cite: 4]
+    name: "Ibnu", //[cite: 4]
+    nickname: "ibnu", //[cite: 4]
+    role: "Student / Developer", //[cite: 4]
+    image: assets.profile, //[cite: 3]
+    birthdate: "15 Mei", //[cite: 4]
+    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
+    instagram: "luthfiiizzz_", //[cite: 4]
+    about: "Coding & exploring life beyond the editor." //[cite: 4]
+  },
+  {
+    id: "baim", //[cite: 4]
+    name: "Ibrahim", //[cite: 4]
+    nickname: "baim", //[cite: 4]
+    role: "Student / Developer", //[cite: 4]
+    image: assets.profile, //[cite: 3]
+    birthdate: "15 Mei", //[cite: 4]
+    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
+    instagram: "luthfiiizzz_", //[cite: 4]
+    about: "Coding & exploring life beyond the editor." //[cite: 4]
+  },
+  {
+    id: "jibran", //[cite: 4]
+    name: "Jibran", //[cite: 4]
+    nickname: "gibran", //[cite: 4]
+    role: "Student / Developer", //[cite: 4]
+    image: assets.profile, //[cite: 3]
+    birthdate: "15 Mei", //[cite: 4]
+    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
+    instagram: "luthfiiizzz_", //[cite: 4]
+    about: "Coding & exploring life beyond the editor." //[cite: 4]
+  },
+  {
+    id: "keefe", //[cite: 4]
+    name: "Keefe", //[cite: 4]
+    nickname: "keef", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -128,9 +206,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "ilham", //[cite: 4]
+    name: "Muhammad Ilham", //[cite: 4]
+    nickname: "ilham", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -141,9 +219,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "nabeel", //[cite: 4]
+    name: "Nabeel Hilma", //[cite: 4]
+    nickname: "Beel", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -154,9 +232,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "novi", //[cite: 4]
+    name: "Novi Chelia", //[cite: 4]
+    nickname: "novi", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -167,9 +245,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "dita", //[cite: 4]
+    name: "Rachdhita", //[cite: 4]
+    nickname: "dita", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -180,9 +258,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "rapli", //[cite: 4]
+    name: "Rafli Nadzriel", //[cite: 4]
+    nickname: "pli", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -193,9 +271,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "ehan", //[cite: 4]
+    name: "Raihan", //[cite: 4]
+    nickname: "ehan", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -206,9 +284,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "voenya", //[cite: 4]
+    name: "Randi bin akhzein", //[cite: 4]
+    nickname: "maulnana", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -219,9 +297,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "gorila", //[cite: 4]
+    name: "Hendra", //[cite: 4]
+    nickname: "Ren", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -232,9 +310,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "reysal", //[cite: 4]
+    name: "Reysal Anjayan", //[cite: 4]
+    nickname: "resal", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -245,9 +323,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "io", //[cite: 4]
+    name: "Rio Bangkit", //[cite: 4]
+    nickname: "roi", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -258,9 +336,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "rafi", //[cite: 4]
+    name: "Rafi Aditya", //[cite: 4]
+    nickname: "adit", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -271,9 +349,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "satria", //[cite: 4]
+    name: "Satria", //[cite: 4]
+    nickname: "sat", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -284,9 +362,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "lek", //[cite: 4]
+    name: "Zefino Novel", //[cite: 4]
+    nickname: "novel", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -297,9 +375,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "faris", //[cite: 4]
+    name: "Faris", //[cite: 4]
+    nickname: "keris", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -310,9 +388,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "nazril", //[cite: 4]
+    name: "Nazril Salman", //[cite: 4]
+    nickname: "Nazril", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
@@ -323,87 +401,9 @@ export const studentsData = [
     about: "Coding & exploring life beyond the editor." //[cite: 4]
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
-  },
-  {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
-  },
-  {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
-  },
-  {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
-  },
-  {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
-  },
-  {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
-  },
-  {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
+    id: "asga", //[cite: 4]
+    name: "Muhammad Asga", //[cite: 4]
+    nickname: "sagara", //[cite: 4]
     role: "Student / Developer", //[cite: 4]
     image: assets.profile, //[cite: 3]
     birthdate: "15 Mei", //[cite: 4]
