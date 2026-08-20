@@ -21,7 +21,6 @@ export default function StudentMessageSection({ student }) {
     setLoading(true);
 
     try {
-      // Mengirim pesan melalui API Route Next.js (/api/messages)
       const response = await fetch("/api/messages", {
         method: "POST",
         headers: {
@@ -66,7 +65,6 @@ export default function StudentMessageSection({ student }) {
           </p>
         </div>
 
-        {/* Mode Selector (Anonim vs Your Name) */}
         <div className="flex justify-center gap-4">
           <button
             type="button"
@@ -78,7 +76,7 @@ export default function StudentMessageSection({ student }) {
             }`}
           >
             <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs">
-              <LockIcon className="w-5 h-5 text-white"/>
+              <LockIcon className="w-15 h-15 text-white"/>
             </div>
             <span className="font-bold text-white text-xs sm:text-sm">Anonymous</span>
           </button>
@@ -93,13 +91,12 @@ export default function StudentMessageSection({ student }) {
             }`}
           >
             <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs">
-              <User className="w-5 h-5 text-white"/>
+              <User className="w-15 h-15 text-white"/>
             </div>
             <span className="font-bold text-white text-xs sm:text-sm">Your Name</span>
           </button>
         </div>
 
-        {/* Form Box */}
         <form onSubmit={handleSubmit} className="bg-stone-800/80 border border-slate-700/70 rounded-2xl overflow-hidden shadow-xl">
           <div className="bg-slate-700/50 px-5 py-2.5 border-b border-slate-700 text-xs font-semibold text-slate-300 flex justify-between items-center">
             <span>Write your message.</span>
@@ -137,7 +134,6 @@ export default function StudentMessageSection({ student }) {
               )}
             </AnimatePresence>
 
-            {/* Textarea Pesan */}
             <div className="flex-1 min-h-[100px]">
               <textarea
                 required
@@ -149,7 +145,6 @@ export default function StudentMessageSection({ student }) {
               />
             </div>
 
-            {/* Tombol Kirim */}
             <div className="flex items-end">
               <button
                 type="submit"

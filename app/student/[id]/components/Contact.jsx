@@ -5,11 +5,11 @@ import { BsInstagram, BsTwitterX } from "react-icons/bs";
 
 const Contact = ({ student }) => {
   return (
-    <section id="contact" className="w-full max-w-4xl mx-auto px-6 py-6">
-      <div className="w-full min-h-[220px] rounded-3xl p-8 flex flex-col items-center justify-center text-center">
-        <h2 className="text-3xl font-bold text-slate-900 mb-6">Contact</h2>
+    <section id="contact" className="w-full max-w-4xl mx-auto px-6 pt-2 pb-8">
+      <div className="w-full rounded-3xl p-4 sm:p-6 flex flex-col items-center justify-center text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Contact</h2>
         
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
           {student?.instagram && (
             <a
               href={`https://instagram.com/${student.instagram}`}
@@ -17,17 +17,17 @@ const Contact = ({ student }) => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white rounded-xl text-sm font-medium transition-all"
             >
-              <BsInstagram className="text-pink-500 w-10 h-10" />
+              <BsInstagram className="text-pink-500 w-5 h-5" />
               @{student.instagram}
             </a>
           )}
           <a
             href={`https://x.com/${student.twitterX}`}
             target="_blank"
-            rel="nooper noreferrer"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white rounded-xl text-sm font-medium transition-all"
           >
-            <BsTwitterX className="text-sky-400 w-10 h-10" />
+            <BsTwitterX className="text-sky-400 w-5 h-5" />
             {student.twitterX}
           </a>
         </div>
