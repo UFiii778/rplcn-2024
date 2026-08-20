@@ -81,7 +81,7 @@ export default function BentoSection() {
                     area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
                     icon={<School className="h-5 w-5" />}
                     title="We School in"
-                    description="We go to SMK ICB Bandung, and it's pretty cool"
+                    description="We go to SMK ICB Bandung, and it's faking syit"
                     image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShy6VHE-7VigK0UqqMRUQcEJizpLNN-L5IJA&s"
                 />
                 <GridItem
