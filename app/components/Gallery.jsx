@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
 import { BsInstagram } from "react-icons/bs";
-import { assets } from "@/assets/assets";
 import { LayoutGrid } from "./magicui/ui/LayoutGrid";
+
 const cards = [
   {
     id: 1,
@@ -17,7 +16,7 @@ const cards = [
       </div>
     ),
     className: "md:col-span-2 min-h-[300px]", 
-    thumbnail: assets.Rpls.src || assets.Rpls,
+    thumbnail: "https://picsum.photos/id/1015/800/600",
   },
   {
     id: 2,
@@ -30,7 +29,7 @@ const cards = [
       </div>
     ),
     className: "col-span-1 min-h-[300px]",
-    thumbnail: assets.Rider?.src || assets.Rider,
+    thumbnail: "https://picsum.photos/id/1025/800/600",
   },
   {
     id: 3,
@@ -43,7 +42,7 @@ const cards = [
       </div>
     ),
     className: "col-span-1 min-h-[300px]",
-    thumbnail: assets.Rpls.src || assets.Rpls,
+    thumbnail: "https://picsum.photos/id/1035/800/600",
   },
   {
     id: 4,
@@ -56,7 +55,7 @@ const cards = [
       </div>
     ),
     className: "md:col-span-2 min-h-[300px]",
-    thumbnail: assets.meOnyellow?.src || assets.meOnyellow,
+    thumbnail: "https://picsum.photos/id/1040/800/600",
   },
 ];
 
@@ -68,21 +67,16 @@ const Gallery = () => {
     >
       <div className="w-11/12 max-w-5xl text-center mx-auto flex flex-col items-center justify-center gap-4">
         <div className="flex flex-wrap items-center justify-center gap-x-2 text-xl md:text-5xl font-Ovo font-medium text-black">
-          <span
-            className="inline-block text-3xl sm:text-6xl lg:text-[46px] text-center"
-          >
+          <span className="inline-block text-3xl sm:text-6xl lg:text-[46px] text-center">
             Beyond the Code
           </span>
         </div>
 
-        <p className="max-w-2xl text-neutral-900 dark:text-neutral-800"
-        >
+        <p className="max-w-2xl text-neutral-900 dark:text-neutral-800">
           When I'm not staring at a code editor, I'm out capturing moments and exploring life. Here’s a glimpse of my world.
         </p>
 
-        <div
-          className="flex flex-col sm:flex-row items-center gap-4 mt-2 z-10"
-        >
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 z-10">
           <a
             href="https://www.instagram.com/rplcn24?"
             target="_blank"

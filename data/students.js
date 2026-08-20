@@ -1,416 +1,480 @@
-import { assets } from "@/assets/assets"; //[cite: 4]
+import { assets } from "@/assets/assets";
 
 export const waliKelas = {
   id: "wali-kelas",
-  name: "Putri Zahra S.Pd.", //[cite: 4]
-  role: "Wali Kelas", //[cite: 4]
-  image: assets.Rpls || assets.profile, // Gunakan gambar dari assets
-  quote: "Bimbinglah masa depanmu dengan ilmu dan kelakuan yang baik.", //[cite: 4]
-  instagram: "putrizahrad" //[cite: 4]
+  name: "Putri Zahra S.Pd.",
+  role: "Wali Kelas",
+  image: "https://picsum.photos/id/64/400/400",
+  image2: "https://picsum.photos/id/65/400/400",
+  image3: "https://picsum.photos/id/66/400/400",
+  quote: "Bimbinglah masa depanmu dengan ilmu dan kelakuan yang baik.",
+  instagram: "putrizahrad"
 };
 
 export const studentsData = [
   {
-    id: "ahsena-teuku", //[cite: 4]
-    name: "Ahsena Teuku Al kahf", //[cite: 4]
-    nickname: "Ahsena", //[cite: 4]
-    role: "Student / Fotografer", //[cite: 4]
-    image: assets.profile, // Diubah menggunakan import assets[cite: 3]
-    birthdate: "1 Janu", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", // murni ID tanpa ?si=...[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "khfesal_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "ahsena-teuku",
+    name: "Ahsena Teuku Al kahf",
+    nickname: "Ahsena",
+    role: "Student / Fotografer",
+    image: "https://picsum.photos/id/1005/400/400",
+    image2: "https://picsum.photos/id/1011/400/400",
+    image3: "https://picsum.photos/id/1015/800/600",
+    birthdate: "1 Janu",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "khfesal_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "akhtar-raufasha", //[cite: 4]
-    name: "Akhtar Raufasha", //[cite: 4]
-    nickname: "Akhtar / Gyess", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "shootasheed", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "akhtar-raufasha",
+    name: "Akhtar Raufasha",
+    nickname: "Akhtar / Gyess",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1012/400/400",
+    image2: "https://picsum.photos/id/1013/400/400",
+    image3: "https://picsum.photos/id/1014/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "shootasheed",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "alfathir-azka", //[cite: 4]
-    name: "Alfathir Azka", //[cite: 4]
-    nickname: "Alfathir", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "??", //[cite: 4]
-    favoriteFood: "??", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "??", //[cite: 4]
-    about: "What?" //[cite: 4]
+    id: "alfathir-azka",
+    name: "Alfathir Azka",
+    nickname: "Alfathir",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1027/400/400",
+    image2: "https://picsum.photos/id/1028/400/400",
+    image3: "https://picsum.photos/id/1029/800/600",
+    birthdate: "??",
+    favoriteFood: "??",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "??",
+    about: "What?"
   },
   {
-    id: "amelia", //[cite: 4]
-    name: "Amelia Pratiwi", //[cite: 4]
-    nickname: "Amel", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "??", //[cite: 4]
-    favoriteFood: "??", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "melmelpratiwi_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "amelia",
+    name: "Amelia Pratiwi",
+    nickname: "Amel",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/338/400/400",
+    image2: "https://picsum.photos/id/339/400/400",
+    image3: "https://picsum.photos/id/340/800/600",
+    birthdate: "??",
+    favoriteFood: "??",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "melmelpratiwi_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "atailah-hilmyy", //[cite: 4]
-    name: "Atailah Hilmy", //[cite: 4]
-    nickname: "Healme", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "??", //[cite: 4]
-    favoriteFood: "??", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "??", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "atailah-hilmyy",
+    name: "Atailah Hilmy",
+    nickname: "Healme",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1062/400/400",
+    image2: "https://picsum.photos/id/1063/400/400",
+    image3: "https://picsum.photos/id/1064/800/600",
+    birthdate: "??",
+    favoriteFood: "??",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "??",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "dhafa-pahri", //[cite: 4]
-    name: "Dhafa Pahri Ramadan", //[cite: 4]
-    nickname: "Dapri", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "??", //[cite: 4]
-    favoriteFood: "??", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "dparmdhann", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "dhafa-pahri",
+    name: "Dhafa Pahri Ramadan",
+    nickname: "Dapri",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1074/400/400",
+    image2: "https://picsum.photos/id/1075/400/400",
+    image3: "https://picsum.photos/id/1076/800/600",
+    birthdate: "??",
+    favoriteFood: "??",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "dparmdhann",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "daffa-raihan", //[cite: 4]
-    name: "Daffa Raihan Thair", //[cite: 4]
-    nickname: "Daffa", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "daffa-raihan",
+    name: "Daffa Raihan Thair",
+    nickname: "Daffa",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1001/400/400",
+    image2: "https://picsum.photos/id/1002/400/400",
+    image3: "https://picsum.photos/id/1003/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "fikri", //[cite: 4]
-    name: "Fikri Malik", //[cite: 4]
-    nickname: "fikri", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "fkrmalik", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "fikri",
+    name: "Fikri Malik",
+    nickname: "fikri",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1025/400/400",
+    image2: "https://picsum.photos/id/1026/400/400",
+    image3: "https://picsum.photos/id/1027/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "fkrmalik",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "fio", //[cite: 4]
-    name: "Fiorentio", //[cite: 4]
-    nickname: "Fio", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "fio",
+    name: "Fiorentio",
+    nickname: "Fio",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1003/400/400",
+    image2: "https://picsum.photos/id/1004/400/400",
+    image3: "https://picsum.photos/id/1005/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "acel", //[cite: 4]
-    name: "Freddrick", //[cite: 4]
-    nickname: "acel", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "acel",
+    name: "Freddrick",
+    nickname: "acel",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1005/400/400",
+    image2: "https://picsum.photos/id/1006/400/400",
+    image3: "https://picsum.photos/id/1008/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "ibnue", //[cite: 4]
-    name: "Ibnu", //[cite: 4]
-    nickname: "ibnu", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "ibnue",
+    name: "Ibnu",
+    nickname: "ibnu",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1011/400/400",
+    image2: "https://picsum.photos/id/1012/400/400",
+    image3: "https://picsum.photos/id/1013/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "baim", //[cite: 4]
-    name: "Ibrahim", //[cite: 4]
-    nickname: "baim", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "baim",
+    name: "Ibrahim",
+    nickname: "baim",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1012/400/400",
+    image2: "https://picsum.photos/id/1013/400/400",
+    image3: "https://picsum.photos/id/1014/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "jibran", //[cite: 4]
-    name: "Jibran", //[cite: 4]
-    nickname: "gibran", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "jibran",
+    name: "Jibran",
+    nickname: "gibran",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1013/400/400",
+    image2: "https://picsum.photos/id/1014/400/400",
+    image3: "https://picsum.photos/id/1015/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "keefe", //[cite: 4]
-    name: "Keefe", //[cite: 4]
-    nickname: "keef", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "keefe",
+    name: "Keefe",
+    nickname: "keef",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1014/400/400",
+    image2: "https://picsum.photos/id/1015/400/400",
+    image3: "https://picsum.photos/id/1016/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "luthfi-abdillah", //[cite: 4]
-    name: "Luthfi Abdillah", //[cite: 4]
-    nickname: "Luthfi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "luthfi-abdillah",
+    name: "Luthfi Abdillah",
+    nickname: "Luthfi",
+    role: "Student / Developer",
+    image: assets.profile,
+    image2: "https://picsum.photos/id/1020/400/400",
+    image3: "https://picsum.photos/id/1021/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "ilham", //[cite: 4]
-    name: "Muhammad Ilham", //[cite: 4]
-    nickname: "ilham", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "ilham",
+    name: "Muhammad Ilham",
+    nickname: "ilham",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1025/400/400",
+    image2: "https://picsum.photos/id/1026/400/400",
+    image3: "https://picsum.photos/id/1027/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "nabeel", //[cite: 4]
-    name: "Nabeel Hilma", //[cite: 4]
-    nickname: "Beel", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "nabeel",
+    name: "Nabeel Hilma",
+    nickname: "Beel",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1027/400/400",
+    image2: "https://picsum.photos/id/1028/400/400",
+    image3: "https://picsum.photos/id/1029/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "novi", //[cite: 4]
-    name: "Novi Chelia", //[cite: 4]
-    nickname: "novi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "novi",
+    name: "Novi Chelia",
+    nickname: "novi",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/342/400/400",
+    image2: "https://picsum.photos/id/343/400/400",
+    image3: "https://picsum.photos/id/344/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "dita", //[cite: 4]
-    name: "Rachdhita", //[cite: 4]
-    nickname: "dita", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "dita",
+    name: "Rachdhita",
+    nickname: "dita",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/331/400/400",
+    image2: "https://picsum.photos/id/334/400/400",
+    image3: "https://picsum.photos/id/335/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "rapli", //[cite: 4]
-    name: "Rafli Nadzriel", //[cite: 4]
-    nickname: "pli", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "rapli",
+    name: "Rafli Nadzriel",
+    nickname: "pli",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1062/400/400",
+    image2: "https://picsum.photos/id/1063/400/400",
+    image3: "https://picsum.photos/id/1064/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "ehan", //[cite: 4]
-    name: "Raihan", //[cite: 4]
-    nickname: "ehan", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "ehan",
+    name: "Raihan",
+    nickname: "ehan",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1074/400/400",
+    image2: "https://picsum.photos/id/1075/400/400",
+    image3: "https://picsum.photos/id/1076/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "voenya", //[cite: 4]
-    name: "Randi bin akhzein", //[cite: 4]
-    nickname: "maulnana", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "voenya",
+    name: "Randi bin akhzein",
+    nickname: "maulnana",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1005/400/400",
+    image2: "https://picsum.photos/id/1006/400/400",
+    image3: "https://picsum.photos/id/1008/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "gorila", //[cite: 4]
-    name: "Hendra", //[cite: 4]
-    nickname: "Ren", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "gorila",
+    name: "Hendra",
+    nickname: "Ren",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1012/400/400",
+    image2: "https://picsum.photos/id/1013/400/400",
+    image3: "https://picsum.photos/id/1014/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "reysal", //[cite: 4]
-    name: "Reysal Anjayan", //[cite: 4]
-    nickname: "resal", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "reysal",
+    name: "Reysal Anjayan",
+    nickname: "resal",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1027/400/400",
+    image2: "https://picsum.photos/id/1028/400/400",
+    image3: "https://picsum.photos/id/1029/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "io", //[cite: 4]
-    name: "Rio Bangkit", //[cite: 4]
-    nickname: "roi", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "io",
+    name: "Rio Bangkit",
+    nickname: "roi",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1001/400/400",
+    image2: "https://picsum.photos/id/1002/400/400",
+    image3: "https://picsum.photos/id/1003/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "rafi", //[cite: 4]
-    name: "Rafi Aditya", //[cite: 4]
-    nickname: "adit", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "rafi",
+    name: "Rafi Aditya",
+    nickname: "adit",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1003/400/400",
+    image2: "https://picsum.photos/id/1004/400/400",
+    image3: "https://picsum.photos/id/1005/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "satria", //[cite: 4]
-    name: "Satria", //[cite: 4]
-    nickname: "sat", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "satria",
+    name: "Satria",
+    nickname: "sat",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1005/400/400",
+    image2: "https://picsum.photos/id/1006/400/400",
+    image3: "https://picsum.photos/id/1008/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "lek", //[cite: 4]
-    name: "Zefino Novel", //[cite: 4]
-    nickname: "novel", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "lek",
+    name: "Zefino Novel",
+    nickname: "novel",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1011/400/400",
+    image2: "https://picsum.photos/id/1012/400/400",
+    image3: "https://picsum.photos/id/1013/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "faris", //[cite: 4]
-    name: "Faris", //[cite: 4]
-    nickname: "keris", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "faris",
+    name: "Faris",
+    nickname: "keris",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1012/400/400",
+    image2: "https://picsum.photos/id/1013/400/400",
+    image3: "https://picsum.photos/id/1014/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "nazril", //[cite: 4]
-    name: "Nazril Salman", //[cite: 4]
-    nickname: "Nazril", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "nazril",
+    name: "Nazril Salman",
+    nickname: "Nazril",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1013/400/400",
+    image2: "https://picsum.photos/id/1014/400/400",
+    image3: "https://picsum.photos/id/1015/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   },
   {
-    id: "asga", //[cite: 4]
-    name: "Muhammad Asga", //[cite: 4]
-    nickname: "sagara", //[cite: 4]
-    role: "Student / Developer", //[cite: 4]
-    image: assets.profile, //[cite: 3]
-    birthdate: "15 Mei", //[cite: 4]
-    favoriteFood: "Ramen & Nasi Goreng", //[cite: 4]
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS", //[cite: 4]
-    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975", //[cite: 4]
-    instagram: "luthfiiizzz_", //[cite: 4]
-    about: "Coding & exploring life beyond the editor." //[cite: 4]
+    id: "asga",
+    name: "Muhammad Asga",
+    nickname: "sagara",
+    role: "Student / Developer",
+    image: "https://picsum.photos/id/1014/400/400",
+    image2: "https://picsum.photos/id/1015/400/400",
+    image3: "https://picsum.photos/id/1016/800/600",
+    birthdate: "15 Mei",
+    favoriteFood: "Ramen & Nasi Goreng",
+    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
+    instagram: "luthfiiizzz_",
+    about: "Coding & exploring life beyond the editor."
   }
 ];

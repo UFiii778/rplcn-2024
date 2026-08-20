@@ -32,7 +32,7 @@ export default async function StudentDetailPage({ params }) {
         <Navbar />
         <Header student={student} />
         <About student={student} />
-        <Gallery photos={student?.photos} />
+        <Gallery student={student} />
         <Music spotifyTrackId={student?.spotifyTrackId} />
         <Contact student={student} />
         

@@ -1,29 +1,24 @@
 "use client";
 
-import { assets } from "@/assets/assets";
-import Image from "next/image";
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import DriftWall from "./reactbits/DriftWall";
-import { X } from "lucide-react";
 
 const Certificates = () => {
-
+    // Foto acak menggunakan Unsplash/Picsum dengan seed/id berbeda
     const items = [
-        { title: "Me", image: assets.mainMe?.src || assets.mainMe },
-        { title: "Camera Man", image: assets.CameraMan?.src || assets.CameraMan },
-        { title: "Rider", image: assets.Rider?.src || assets.Rider },
-        { title: "Yellow Vibes", image: assets.meOnyellow?.src || assets.meOnyellow },
-        { title: "Neo", image: assets.Neo?.src || assets.Neo },
-        { title: "Gemera", image: assets.Gemera?.src || assets.Gemera },
-        { title: "Minecraft", image: assets.MineCraft?.src || assets.MineCraft },
-        { title: "RPLS", image: assets.Rpls?.src || assets.Rpls },
+        { title: "Me", image: "https://picsum.photos/id/10/800/600" },
+        { title: "Camera Man", image: "https://picsum.photos/id/11/800/600" },
+        { title: "Rider", image: "https://picsum.photos/id/12/800/600" },
+        { title: "Yellow Vibes", image: "https://picsum.photos/id/13/800/600" },
+        { title: "Neo", image: "https://picsum.photos/id/14/800/600" },
+        { title: "Gemera", image: "https://picsum.photos/id/15/800/600" },
+        { title: "Minecraft", image: "https://picsum.photos/id/16/800/600" },
+        { title: "RPLS", image: "https://picsum.photos/id/17/800/600" },
     ];
-
 
     return (
         <div id="certificates" className="w-full px-[12%] py-16 scroll-mt-20">
-
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
