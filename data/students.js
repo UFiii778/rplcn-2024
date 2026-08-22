@@ -1,5 +1,3 @@
-import { assets } from "@/assets/assets";
-
 export const waliKelas = {
   id: "wali-kelas",
   name: "Putri Zahra S.Pd.",
@@ -25,7 +23,7 @@ export const studentsData = [
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
     instagram: "khfesal_",
-    about: "Coding & exploring life beyond the editor."
+    about: "Something About ICN"
   },
   {
     id: "akhtar-raufasha",
@@ -40,7 +38,7 @@ export const studentsData = [
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
     instagram: "shootasheed",
-    about: "Coding & exploring life beyond the editor."
+    about: "Something About ICN"
   },
   {
     id: "alfathir-azka",
@@ -70,14 +68,14 @@ export const studentsData = [
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
     instagram: "melmelpratiwi_",
-    about: "Coding & exploring life beyond the editor."
+    about: "Something About ICN"
   },
   {
     id: "atailah-hilmyy",
     name: "Atailah Hilmy",
     nickname: "Healme",
     role: "Student / Developer",
-    image: "https://picsum.photos/id/1062/400/400",
+    image: "https://picsum.photos/id/92/400/400",
     image2: "https://picsum.photos/id/1063/400/400",
     image3: "https://picsum.photos/id/1064/800/600",
     birthdate: "??",
@@ -85,7 +83,7 @@ export const studentsData = [
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
     instagram: "??",
-    about: "Coding & exploring life beyond the editor."
+    about: "Something About ICN"
   },
   {
     id: "dhafa-pahri",
@@ -100,7 +98,7 @@ export const studentsData = [
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
     instagram: "dparmdhann",
-    about: "Coding & exploring life beyond the editor."
+    about: "Something About ICN"
   },
   {
     id: "daffa-raihan",
@@ -114,15 +112,15 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "fikri",
     name: "Fikri Malik",
     nickname: "fikri",
     role: "Student / Developer",
-    image: "https://picsum.photos/id/1025/400/400",
+    image: "https://picsum.photos/id/125/400/400",
     image2: "https://picsum.photos/id/1026/400/400",
     image3: "https://picsum.photos/id/1027/800/600",
     birthdate: "15 Mei",
@@ -130,7 +128,7 @@ export const studentsData = [
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
     instagram: "fkrmalik",
-    about: "Coding & exploring life beyond the editor."
+    about: "Something About ICN"
   },
   {
     id: "fio",
@@ -144,8 +142,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "acel",
@@ -159,8 +157,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "ibnue",
@@ -174,8 +172,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "baim",
@@ -189,8 +187,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "jibran",
@@ -204,12 +202,12 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "keefe",
-    name: "Keefe",
+    name: "Keefe Kay",
     nickname: "keef",
     role: "Student / Developer",
     image: "https://picsum.photos/id/1014/400/400",
@@ -219,38 +217,38 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "luthfi-abdillah",
     name: "Luthfi Abdillah",
     nickname: "Luthfi",
     role: "Student / Developer",
-    image: assets.profile,
+    image: "https://picsum.photos/id/1020/400/400",
     image2: "https://picsum.photos/id/1020/400/400",
     image3: "https://picsum.photos/id/1021/800/600",
     birthdate: "15 Mei",
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "ilham",
     name: "Muhammad Ilham",
     nickname: "ilham",
     role: "Student / Developer",
-    image: "https://picsum.photos/id/1025/400/400",
+    image: "https://picsum.photos/id/15/400/400",
     image2: "https://picsum.photos/id/1026/400/400",
     image3: "https://picsum.photos/id/1027/800/600",
     birthdate: "15 Mei",
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "nabeel",
@@ -264,8 +262,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "novi",
@@ -279,8 +277,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "dita",
@@ -294,23 +292,23 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "rapli",
     name: "Rafli Nadzriel",
     nickname: "pli",
     role: "Student / Developer",
-    image: "https://picsum.photos/id/1062/400/400",
+    image: "https://picsum.photos/id/62/400/400",
     image2: "https://picsum.photos/id/1063/400/400",
     image3: "https://picsum.photos/id/1064/800/600",
     birthdate: "15 Mei",
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "ehan",
@@ -324,8 +322,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "voenya",
@@ -339,12 +337,12 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "gorila",
-    name: "Hendra",
+    name: "Rendra",
     nickname: "Ren",
     role: "Student / Developer",
     image: "https://picsum.photos/id/1012/400/400",
@@ -354,8 +352,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "reysal",
@@ -369,8 +367,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "io",
@@ -384,8 +382,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "rafi",
@@ -399,8 +397,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "satria",
@@ -414,12 +412,12 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
-    id: "lek",
-    name: "Zefino Novel",
+    id: "ofel",
+    name: "Zefino ofel",
     nickname: "novel",
     role: "Student / Developer",
     image: "https://picsum.photos/id/1011/400/400",
@@ -429,8 +427,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "faris",
@@ -444,8 +442,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "nazril",
@@ -459,8 +457,8 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   },
   {
     id: "asga",
@@ -474,7 +472,7 @@ export const studentsData = [
     favoriteFood: "Ramen & Nasi Goreng",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "0B96zn11fA3apNGZqERmPO?si=ceedd6a3e56e4975",
-    instagram: "luthfiiizzz_",
-    about: "Coding & exploring life beyond the editor."
+    instagram: "??",
+    about: "Something About ICN"
   }
 ];

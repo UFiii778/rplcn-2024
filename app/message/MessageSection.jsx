@@ -31,7 +31,6 @@ export default function MessageSection() {
 
   const [messages, setMessages] = useState([]);
 
-  // Fetch data dari API Route (/api/messages)
   const fetchMessages = async () => {
     try {
       const res = await fetch("/api/messages");
@@ -55,14 +54,12 @@ export default function MessageSection() {
 
   const displayMessages = messages.length > 0 ? messages : dummyMessages;
 
-  // Bagi pesan ganjil/genap
   const row1Raw = displayMessages.filter((_, idx) => idx % 2 === 0);
   const row2Raw = displayMessages.filter((_, idx) => idx % 2 !== 0);
 
   const row1List = row1Raw.length > 0 ? row1Raw : displayMessages;
   const row2List = row2Raw.length > 0 ? row2Raw : displayMessages;
 
-  // Duplikasi minimal 8x agar antrean kartunya sangat panjang & tidak putus
   const row1Messages = [...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List];
   const row2Messages = [...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List];
 
@@ -124,10 +121,8 @@ export default function MessageSection() {
           Want to send us a message? Please give it a try.
         </h2>
 
-        {/* Menggunakan w-screen dan -mx-4 agar animasi kartu bisa meluncur penuh dari ujung layar kiri ke kanan */}
         <div className="w-screen relative left-1/2 -translate-x-1/2 space-y-4 overflow-hidden py-4">
 
-          {/* Row 1: Kanan ke Kiri */}
           <div className="flex overflow-hidden w-full">
             <motion.div
               className="flex gap-4 flex-nowrap pr-4"
@@ -148,7 +143,6 @@ export default function MessageSection() {
             </motion.div>
           </div>
 
-          {/* Row 2: Kiri ke Kanan */}
           <div className="flex overflow-hidden w-full">
             <motion.div
               className="flex gap-4 flex-nowrap pr-4"

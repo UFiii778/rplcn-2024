@@ -1,10 +1,8 @@
 "use client";
 
-import { assets } from "@/assets/assets";
 import React from "react";
 import Image from "next/image";
 import { CgInstagram } from "react-icons/cg";
-import { LiaLinkedinIn } from "react-icons/lia";
 import { FaDiscord, FaSpotify, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
@@ -12,29 +10,14 @@ const Footer = () => {
   const socials = [
     {
       name: "Instagram",
-      href: "https://www.instagram.com/luthfiiizzz_?igsh=Nm4xdnE1dmg4aHZy",
+      href: "https://www.instagram.com/???igsh=Nm4xdnE1dmg4aHZy",
       icon: <CgInstagram className="w-5 h-5" />, 
-    },
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/in/luthfi-abdillah-80192438b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-      icon: <LiaLinkedinIn className="w-5 h-5" />,
-    },
-    {
-      name: "Spotify",
-      href: "https://open.spotify.com/user/316teau73kzdhsqsvbzufq2nii64?si=d982cad91a604b25.com",
-      icon: <FaSpotify className="w-5 h-5" />,
     },
      {
       name: "Discord",
       href: "https://discord.com/users/898745354697195611",
       icon: <FaDiscord className="w-5 h-5" />,
-    },
-    {
-      name: "TikTok",
-      href: "https://vt.tiktok.com/ZSXjc2r9f/",
-      icon: <FaTiktok className="w-5 h-5" />
-    },
+    }
   ];
 
   return (
@@ -61,7 +44,7 @@ const Footer = () => {
       <div className="w-full max-w-5xl pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
         <p>© {new Date().getFullYear()} RPLCN 2024-2027 . All rights reserved.</p>
         <p className="font-light">
-          Designed with ❤️ based in <span className="font-medium text-gray-400">Bandung</span>
+          Designed with ❤️   based in <span className="font-medium text-gray-400">Bandung</span>
         </p>
       </div>
     </footer>

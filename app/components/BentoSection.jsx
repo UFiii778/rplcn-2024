@@ -54,7 +54,7 @@ export default function BentoSection() {
         <section className="w-full px-[8%] py-16">
             <div className="text-center mb-10">
                 <h2 className="text-3xl md:text-5xl font-bold text-white dark:text-black">
-                    Featured Capabilities
+                    Hi There!
                 </h2>
             </div>
 
@@ -76,12 +76,13 @@ export default function BentoSection() {
                     icon={<SearchCheck className="h-5 w-5" />}
                     title="How close are the relationships in this class?"
                     description="Growing every day"
+                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShy6VHE-7VigK0UqqMRUQcEJizpLNN-L5IJA&s"
                 />
                 <GridItem
                     area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
                     icon={<School className="h-5 w-5" />}
                     title="We School in"
-                    description="We go to SMK ICB Bandung, and it's faking syit"
+                    description="We go to SMK ICB Bandung, and it's bored"
                     image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShy6VHE-7VigK0UqqMRUQcEJizpLNN-L5IJA&s"
                 />
                 <GridItem

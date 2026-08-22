@@ -25,7 +25,7 @@ export default function StudentListPage() {
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 px-4 py-12 sm:px-8 relative">
       <div className="max-w-7xl mx-auto relative z-10 space-y-12">
-        
+
         <header className="text-center space-y-3">
           <span className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-slate-900 text-sky-400 border border-slate-800">
             Class Directory
@@ -41,18 +41,18 @@ export default function StudentListPage() {
         <section className="flex justify-center">
           <Link
             href={`/student/${waliKelas.id}`}
-            className="w-full max-w-2xl bg-slate-900 p-[1px] rounded-3xl border border-slate-800"
+            className="w-full max-w-4xl bg-slate-900 p-[1px] rounded-3xl border border-slate-800 transition-transform hover:scale-[1.01]"
           >
-            <div className="bg-slate-900 rounded-[23px] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
-              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border border-slate-700 flex-shrink-0">
+            <div className="bg-slate-900 rounded-[23px] p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-8">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border border-slate-700 flex-shrink-0">
                 <Image src={waliKelas.image} alt={waliKelas.name} fill className="object-cover" />
               </div>
-              <div className="text-center sm:text-left space-y-2">
-                <span className="text-[10px] uppercase font-bold tracking-widest bg-slate-800 text-yellow-300 px-3 py-1 rounded-full">
+              <div className="text-center sm:text-left space-y-3">
+                <span className="text-xs uppercase font-bold tracking-widest bg-slate-800 text-yellow-300 px-4 py-1.5 rounded-full inline-block">
                   {waliKelas.role}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white">{waliKelas.name}</h2>
-                <p className="text-xs sm:text-sm text-slate-400 italic">"{waliKelas.quote}"</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white">{waliKelas.name}</h2>
+                <p className="text-sm sm:text-base text-slate-400 italic">"{waliKelas.quote}"</p>
               </div>
             </div>
           </Link>
@@ -82,9 +82,6 @@ export default function StudentListPage() {
                 <h3 className="text-lg font-bold text-white tracking-wide truncate">
                   {student.name}
                 </h3>
-                <p className="text-[11px] font-medium text-slate-400 tracking-wider uppercase">
-                  {student.role || "Software Engineer"}
-                </p>
               </div>
 
               <div className="absolute inset-0 top-16 bottom-20 flex items-center justify-center overflow-hidden pointer-events-none">

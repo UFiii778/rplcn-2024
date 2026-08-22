@@ -20,8 +20,8 @@ export default function Home() {
       <div style={{ backgroundColor: "#00172E", minHeight: "100vh" }}>
         <Header />
       </div>
-      <About />
       <BentoSection />
+      <About />
       <Gallery />
       <Next />
       <Certificates />

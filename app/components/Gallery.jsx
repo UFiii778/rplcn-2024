@@ -68,12 +68,12 @@ const Gallery = () => {
       <div className="w-11/12 max-w-5xl text-center mx-auto flex flex-col items-center justify-center gap-4">
         <div className="flex flex-wrap items-center justify-center gap-x-2 text-xl md:text-5xl font-Ovo font-medium text-black">
           <span className="inline-block text-3xl sm:text-6xl lg:text-[46px] text-center">
-            Beyond the Code
+            Random Moment's
           </span>
         </div>
 
         <p className="max-w-2xl text-neutral-900 dark:text-neutral-800">
-          When I'm not staring at a code editor, I'm out capturing moments and exploring life. Here’s a glimpse of my world.
+          Hilarious and stupid things that happen in class
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 z-10">
