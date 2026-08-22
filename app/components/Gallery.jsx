@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { assets } from "@/assets/assets";
 import { BsInstagram } from "react-icons/bs";
 import { LayoutGrid } from "./magicui/ui/LayoutGrid";
 
@@ -16,7 +17,7 @@ const cards = [
       </div>
     ),
     className: "md:col-span-2 min-h-[300px]", 
-    thumbnail: "https://picsum.photos/id/1015/800/600",
+    thumbnail: assets.memo.src,
   },
   {
     id: 2,
@@ -29,7 +30,7 @@ const cards = [
       </div>
     ),
     className: "col-span-1 min-h-[300px]",
-    thumbnail: "https://picsum.photos/id/1025/800/600",
+    thumbnail: assets.memo1.src,
   },
   {
     id: 3,
@@ -42,7 +43,7 @@ const cards = [
       </div>
     ),
     className: "col-span-1 min-h-[300px]",
-    thumbnail: "https://picsum.photos/id/1035/800/600",
+    thumbnail: assets.memo2.src,
   },
   {
     id: 4,
@@ -55,7 +56,7 @@ const cards = [
       </div>
     ),
     className: "md:col-span-2 min-h-[300px]",
-    thumbnail: "https://picsum.photos/id/1040/800/600",
+    thumbnail: assets.Rpls.src,
   },
 ];
 

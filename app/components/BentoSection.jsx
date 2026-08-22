@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { assets } from "@/assets/assets";
 import { Box, Settings, Lock, Sparkles, Search, School, CheckSquare, X, SearchCheck } from "lucide-react";
 import { GlowingEffect } from "./magicui/ui/GlowingEffect";
 import { PiOfficeChairLight } from "react-icons/pi";
@@ -76,20 +77,21 @@ export default function BentoSection() {
                     icon={<SearchCheck className="h-5 w-5" />}
                     title="How close are the relationships in this class?"
                     description="Growing every day"
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShy6VHE-7VigK0UqqMRUQcEJizpLNN-L5IJA&s"
+                    image={assets.Rpls.src || assets.Rpls}
                 />
                 <GridItem
                     area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
                     icon={<School className="h-5 w-5" />}
                     title="We School in"
                     description="We go to SMK ICB Bandung, and it's bored"
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShy6VHE-7VigK0UqqMRUQcEJizpLNN-L5IJA&s"
+                    image={assets.icb.src || assets.icb}
                 />
                 <GridItem
                     area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
                     icon={<X className="h-5 w-5 text-red-500"/>}
                     title="How u Feel"
                     description="I'm late in creating this website."
+                    image={assets.LogoDark.src || assets.LogoDark}
                 />
             </ul>
         </section>

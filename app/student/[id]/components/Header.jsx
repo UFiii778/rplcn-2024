@@ -7,14 +7,12 @@ import { assets } from "@/assets/assets";
 const Header = ({ student }) => {
   return (
     <header className="w-full relative bg-slate-900 pb-4">
-      {/* Banner diperbesar dari h-24 ke h-36 di mobile */}
-      <div className="w-full h-36 sm:h-48 bg-gradient-to-r from-stone-800 to-stone-900 relative overflow-hidden">
+      <div className="w-full h-36 sm:h-48 from-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:16px_16px]" />
       </div>
 
-      {/* Margin top disesuaikan agar avatar mengambang pas di banner */}
       <div className="max-w-4xl mx-auto px-6 flex items-end gap-4 -mt-16 sm:-mt-20 relative z-10">
-        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-slate-950 overflow-hidden relative shadow-xl bg-red-600 flex-shrink-0">
+        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-slate-950 overflow-hidden relative shadow-xl bg-slate-600 flex-shrink-0">
           <Image
             src={student?.image || assets.profile}
             alt={student?.name || "Foto Profil"}

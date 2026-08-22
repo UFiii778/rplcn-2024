@@ -27,7 +27,6 @@ const Gallery = ({ student, photos }) => {
   return (
     <section id="gallery" className="w-full max-w-4xl mx-auto px-6 py-6">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-        {/* Kolom Kiri (2 Foto Kecil) */}
         <div className="md:col-span-4 flex flex-col gap-4">
           <div className="h-44 rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
             <Image
@@ -36,9 +35,6 @@ const Gallery = ({ student, photos }) => {
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="absolute bottom-2 left-2 text-xs font-bold bg-black/60 px-2 py-1 rounded text-white">
-              FOTO 1
-            </span>
           </div>
 
           <div className="h-44 rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
@@ -48,13 +44,9 @@ const Gallery = ({ student, photos }) => {
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="absolute bottom-2 left-2 text-xs font-bold bg-black/60 px-2 py-1 rounded text-white">
-              FOTO 2
-            </span>
           </div>
         </div>
 
-        {/* Kolom Kanan (1 Foto Besar) */}
         <div className="md:col-span-8 h-full min-h-[368px] rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
           <Image
             src={displayImages[2]}
@@ -62,9 +54,6 @@ const Gallery = ({ student, photos }) => {
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          <span className="absolute bottom-2 left-2 text-xs font-bold bg-black/60 px-2 py-1 rounded text-white">
-            FOTO 3
-          </span>
         </div>
       </div>
     </section>

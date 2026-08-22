@@ -4,9 +4,22 @@ import React, { useState } from "react";
 import { BsSpotify } from "react-icons/bs";
 import { FaPlay } from "react-icons/fa";
 
+// Fungsi untuk mengekstrak ID dari URL Spotify atau ID mentah
+const extractTrackId = (input, defaultId) => {
+  if (!input) return defaultId;
+  
+  // Jika input berupa URL penuh (misal: https://open.spotify.com/track/3BJe4B8zGn...)
+  if (input.includes("/track/")) {
+    return input.split("/track/")[1]?.split("?")[0];
+  }
+  
+  // Jika input berupa ID dengan query (misal: 7Hc6qcJG4NtyZgbNvQyd8U?si=...)
+  return input.split("?")[0];
+};
+
 const Music = ({ spotifyTrackId, spotifyTrackId2 }) => {
-  const trackId1 = spotifyTrackId?.split("?")[0] || "3BJe4B8zGnqEdQPMvfVjuS";
-  const trackId2 = spotifyTrackId2?.split("?")[0] || "0B96zn11fA3apNGZqERmPO";
+  const trackId1 = extractTrackId(spotifyTrackId, "3BJe4B8zGnqEdQPMvfVjuS");
+  const trackId2 = extractTrackId(spotifyTrackId2, "7Hc6qcJG4NtyZgbNvQyd8U");
 
   const [activeTrack, setActiveTrack] = useState(1);
 
@@ -33,9 +46,11 @@ const Music = ({ spotifyTrackId, spotifyTrackId2 }) => {
                 onClick={() => setActiveTrack(1)}
                 className="h-[80px] px-6 flex items-center justify-between cursor-pointer hover:bg-stone-800 transition-colors"
               >
-                <span className="text-sm font-semibold text-slate-300"><BsSpotify className="w-10 h-10 text-green-500"/></span>
+                <span className="text-sm font-semibold text-slate-300">
+                  <BsSpotify className="w-10 h-10 text-green-500"/>
+                </span>
                 <span className="flex items-center gap-2 text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/20">
-                  <FaPlay className="w-3 h-3" /> Play
+                  <FaPlay className="w-3 h-3" /> Play Track 1
                 </span>
               </div>
             )}
@@ -56,9 +71,11 @@ const Music = ({ spotifyTrackId, spotifyTrackId2 }) => {
                 onClick={() => setActiveTrack(2)}
                 className="h-[80px] px-6 flex items-center justify-between cursor-pointer hover:bg-stone-800 transition-colors"
               >
-                <span className="text-sm font-semibold text-slate-300"><BsSpotify className="w-10 h-10 text-green-500"/></span>
+                <span className="text-sm font-semibold text-slate-300">
+                  <BsSpotify className="w-10 h-10 text-green-500"/>
+                </span>
                 <span className="flex items-center gap-2 text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/20">
-                  <FaPlay className="w-3 h-3" /> Play
+                  <FaPlay className="w-3 h-3" /> Play Track 2
                 </span>
               </div>
             )}

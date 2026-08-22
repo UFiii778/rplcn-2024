@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div>
             <ScrollExpand
-                src={assets.Rpls.src || assets.Rpls}
+                src={assets.rplcn24.src || assets.rplcn24}
                 alt="Product hero"
                 title="RPLG 2024 - 2027"
                 scrollHint="Scroll inside the frame"

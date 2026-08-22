@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CanvasRevealEffect } from "./magicui/ui/Canvas-Reveal-Effect";
 import { ArrowUpRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { assets } from "@/assets/assets";
 
 const certificates = [
   {
@@ -23,7 +24,7 @@ const certificates = [
     title: "Student Directory",
     issuer: "XII RPL",
     description: "View the full profiles of all classmates, including their personal details and social media accounts.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
+    image: assets.memo1.src,
     colors: [[239, 68, 68]], // Merah
     animationSpeed: 3,
     link: "/student"

@@ -1,20 +1,17 @@
 "use client";
 
 import React from "react";
+import { assets } from "@/assets/assets";
 import { motion } from "framer-motion";
 import DriftWall from "./reactbits/DriftWall";
 
 const Certificates = () => {
-    // Foto acak menggunakan Unsplash/Picsum dengan seed/id berbeda
     const items = [
-        { title: "Me", image: "https://picsum.photos/id/10/800/600" },
-        { title: "Camera Man", image: "https://picsum.photos/id/11/800/600" },
-        { title: "Rider", image: "https://picsum.photos/id/12/800/600" },
-        { title: "Yellow Vibes", image: "https://picsum.photos/id/13/800/600" },
-        { title: "Neo", image: "https://picsum.photos/id/14/800/600" },
-        { title: "Gemera", image: "https://picsum.photos/id/15/800/600" },
-        { title: "Minecraft", image: "https://picsum.photos/id/16/800/600" },
-        { title: "RPLS", image: "https://picsum.photos/id/17/800/600" },
+        { title: "i dont know", image: assets.memo1.src },
+        { title: "what", image: assets.memo.src },
+        { title: "hm", image: assets.memo2.src },
+        { title: "ow", image: assets.Rpls.src },
+        { title: "that's great", image: assets.rplcn24.src },
     ];
 
     return (

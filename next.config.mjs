@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: true, // Pindahkan ke sini (sejajar dengan remotePatterns)
     remotePatterns: [
       {
         protocol: "https",
@@ -9,6 +10,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "picsum.photos",
+      },
+      {
+        protocol: 'https',
+        hostname: 'pfsydgnopvwccxohryvn.supabase.co',
       },
     ],
   },
