@@ -352,14 +352,14 @@ export const studentsData = [
     nickname: "Ren",
     role: "Student / Developer",
     image: `${STORAGE_URL}/rendra2.jpg`,
-    image2: `${STORAGE_URL}/rendra.jpg`,
+    image2: "https://picsum.photos/id/128/800/600",
     image3: `${STORAGE_URL}/rendra1.jpg`,
     birthdate: "??",
     favoriteFood: "??",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "7Hc6qcJG4NtyZgbNvQyd8U?si=69354c48b804403e",
     instagram: "prdpttt",
-    about: "Something About ICN"
+    about: "Gak Immo gak tidur"
   },
   {
     id: "reysal",
