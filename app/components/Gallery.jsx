@@ -10,7 +10,7 @@ const cards = [
     id: 1,
     content: (
       <div>
-        <p className="font-bold text-white text-xl md:text-2xl">Me</p>
+        <p className="font-bold text-white text-xl md:text-2xl">Pjbl</p>
         <p className="font-normal text-white text-sm my-2">
           Personal captures and coding moments.
         </p>
@@ -23,9 +23,9 @@ const cards = [
     id: 2,
     content: (
       <div>
-        <p className="font-bold text-white text-xl md:text-2xl">Camera Man</p>
+        <p className="font-bold text-white text-xl md:text-2xl">Majelis Takdim</p>
         <p className="font-normal text-white text-sm my-2">
-          Capturing stories behind the lens.
+          17 Agustus Karnaval Event!  
         </p>
       </div>
     ),
@@ -36,9 +36,9 @@ const cards = [
     id: 3,
     content: (
       <div>
-        <p className="font-bold text-white text-xl md:text-2xl">Rider</p>
+        <p className="font-bold text-white text-xl md:text-2xl">Happy!</p>
         <p className="font-normal text-white text-sm my-2">
-          Exploring the roads and outdoors.
+          Sena,Rehan and the best teacher.
         </p>
       </div>
     ),
@@ -49,9 +49,9 @@ const cards = [
     id: 4,
     content: (
       <div>
-        <p className="font-bold text-white text-xl md:text-2xl">Yellow Vibes</p>
+        <p className="font-bold text-white text-xl md:text-2xl">We All</p>
         <p className="font-normal text-white text-sm my-2">
-          Bright aesthetic and colorful frames.
+          XII RPL picture.
         </p>
       </div>
     ),

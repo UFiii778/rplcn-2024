@@ -1,17 +1,15 @@
 "use client";
 
+import ImageWithSkeleton from "@/app/components/ImageWithSkeleton";
 import React from "react";
-import Image from "next/image";
 
 const Gallery = ({ student, photos }) => {
-  // Ambil galeri dari prop 'photos' ATAU dari 'student.gallery' ATAU gabungkan image, image2, image3
   const imageList = photos || student?.gallery || [
     student?.image,
     student?.image2,
     student?.image3,
-  ].filter(Boolean); // Filter untuk membuang string/URL kosong
+  ].filter(Boolean); 
 
-  // Fallback jika foto kurang dari 3
   const defaultImages = [
     "https://picsum.photos/id/1005/400/400",
     "https://picsum.photos/id/1012/400/400",
@@ -29,30 +27,30 @@ const Gallery = ({ student, photos }) => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
         <div className="md:col-span-4 flex flex-col gap-4">
           <div className="h-44 rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
-            <Image
+            <ImageWithSkeleton
               src={displayImages[0]}
               alt="Foto Galeri 1"
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           <div className="h-44 rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
-            <Image
+            <ImageWithSkeleton
               src={displayImages[1]}
               alt="Foto Galeri 2"
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
         </div>
 
-        <div className="md:col-span-8 h-full min-h-[368px] rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
-          <Image
+        <div className="md:col-span-8 h-80 md:h-[368px] rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
+          <ImageWithSkeleton
             src={displayImages[2]}
             alt="Foto Galeri 3"
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
       </div>

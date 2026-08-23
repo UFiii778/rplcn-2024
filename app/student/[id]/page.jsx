@@ -33,9 +33,12 @@ export default async function StudentDetailPage({ params }) {
         <Header student={student} />
         <About student={student} />
         <Gallery student={student} />
-        <Music spotifyTrackId={student?.spotifyTrackId} />
+        <Music
+          spotifyTrackId={student?.spotifyTrackId}
+          spotifyTrackId2={student?.spotifyTrackId2}
+        />
         <Contact student={student} />
-        
+
         <StudentMessageList studentId={student.id} studentName={student.name} />
         <StudentMessageSection student={student} />
 

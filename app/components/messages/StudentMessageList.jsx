@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { RefreshCcw, Download, X, Share2 } from "lucide-react";
+import { RefreshCcw, Download, X } from "lucide-react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { toPng } from "html-to-image";
@@ -97,9 +97,12 @@ export default function StudentMessageList({ studentId, studentName }) {
 }
 
 function StudentCardItem({ data, onClick }) {
-  const senderLabel = data.is_anonymous
-    ? "Anonymous"
-    : data.sender_name || (data.sender_ig ? `@${data.sender_ig}` : "Somebody");
+  let senderLabel = "Anonymous";
+  if (!data.is_anonymous) {
+    const name = data.sender_name || "Somebody";
+    const ig = data.sender_ig ? `@${data.sender_ig.replace(/^@/, '')}` : "";
+    senderLabel = ig ? `${name} (${ig})` : name;
+  }
 
   return (
     <div
@@ -110,9 +113,9 @@ function StudentCardItem({ data, onClick }) {
         "{data.message}"
       </p>
 
-      <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px]">
-        <span className="text-slate-400">From:</span>
-        <span className="font-semibold text-slate-200 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
+      <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] gap-2">
+        <span className="text-slate-400 shrink-0">From:</span>
+        <span className="font-semibold text-slate-200 bg-slate-800 px-2 py-0.5 rounded border border-slate-700 truncate max-w-[180px]">
           {senderLabel}
         </span>
       </div>
@@ -124,9 +127,13 @@ function MessagePreviewModal({ data, studentName, onClose }) {
   const cardRef = useRef(null);
   const [downloading, setDownloading] = useState(false);
 
-  const senderLabel = data.is_anonymous
+  const nameLabel = data.is_anonymous
     ? "Anonymous"
-    : data.sender_name || (data.sender_ig ? `@${data.sender_ig}` : "Somebody");
+    : data.sender_name || "Somebody";
+  
+  const formattedIg = data.sender_ig
+    ? `@${data.sender_ig.replace(/^@/, '')}`
+    : null;
 
   const handleSaveToGallery = async () => {
     if (!cardRef.current) return;
@@ -147,13 +154,21 @@ function MessagePreviewModal({ data, studentName, onClose }) {
   };
 
   const handleShareWhatsApp = () => {
-    const text = `Pesan Rahasia untuk *${studentName}*:\n\n"${data.message}"\n\nDari: ${senderLabel}`;
+    const fromText = !data.is_anonymous && formattedIg 
+      ? `${nameLabel} (${formattedIg})` 
+      : nameLabel;
+
+    const text = `Pesan Rahasia untuk *${studentName}*:\n\n"${data.message}"\n\nDari: ${fromText}`;
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
 
   const handleShareInstagram = async () => {
-    const shareText = `Secret Message for ${studentName}: "${data.message}" - From: ${senderLabel}`;
+    const fromText = !data.is_anonymous && formattedIg 
+      ? `${nameLabel} (${formattedIg})` 
+      : nameLabel;
+
+    const shareText = `Secret Message for ${studentName}: "${data.message}" - From: ${fromText}`;
 
     if (navigator.share) {
       try {
@@ -208,9 +223,23 @@ function MessagePreviewModal({ data, studentName, onClose }) {
 
           <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
             <span className="text-slate-400">From:</span>
-            <span className="font-semibold text-white bg-slate-800 px-3 py-1 rounded-lg border border-slate-700">
-              {senderLabel}
-            </span>
+            <div className="flex items-center gap-1.5 flex-wrap justify-end">
+              <span className="font-semibold text-white bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">
+                {nameLabel}
+              </span>
+              
+              {!data.is_anonymous && formattedIg && (
+                <a
+                  href={`https://instagram.com/${formattedIg.replace('@', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded-lg border border-pink-500/20 hover:bg-pink-500/20 transition-colors flex items-center gap-1"
+                >
+                  <FaInstagram className="w-3 h-3" />
+                  {formattedIg}
+                </a>
+              )}
+            </div>
           </div>
         </div>
 

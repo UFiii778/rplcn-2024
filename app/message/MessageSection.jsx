@@ -60,8 +60,8 @@ export default function MessageSection() {
   const row1List = row1Raw.length > 0 ? row1Raw : displayMessages;
   const row2List = row2Raw.length > 0 ? row2Raw : displayMessages;
 
-  const row1Messages = [...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List, ...row1List];
-  const row2Messages = [...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List, ...row2List];
+  const row1Messages = [...row1List, ...row1List];
+  const row2Messages = [...row2List, ...row2List];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -118,7 +118,7 @@ export default function MessageSection() {
 
       <div className="space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-center">
-          Want to send us a message? Please give it a try.
+          Want to send us a message? try it.
         </h2>
 
         <div className="w-screen relative left-1/2 -translate-x-1/2 space-y-4 overflow-hidden py-4">
@@ -130,7 +130,7 @@ export default function MessageSection() {
               transition={{
                 repeat: Infinity,
                 ease: "linear",
-                duration: 25,
+                duration: 80,
               }}
             >
               {row1Messages.map((item, idx) => (
@@ -150,7 +150,7 @@ export default function MessageSection() {
               transition={{
                 repeat: Infinity,
                 ease: "linear",
-                duration: 25,
+                duration: 80,
               }}
             >
               {row2Messages.map((item, idx) => (

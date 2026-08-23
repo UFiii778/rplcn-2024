@@ -7,7 +7,7 @@ const Contact = ({ student }) => {
   return (
     <section id="contact" className="w-full max-w-4xl mx-auto px-6 pt-2 pb-8">
       <div className="w-full rounded-3xl p-4 sm:p-6 flex flex-col items-center justify-center text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Contact</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Social</h2>
         
         <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
           {student?.instagram && (

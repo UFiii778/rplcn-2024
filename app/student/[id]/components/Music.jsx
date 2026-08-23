@@ -4,16 +4,13 @@ import React, { useState } from "react";
 import { BsSpotify } from "react-icons/bs";
 import { FaPlay } from "react-icons/fa";
 
-// Fungsi untuk mengekstrak ID dari URL Spotify atau ID mentah
 const extractTrackId = (input, defaultId) => {
   if (!input) return defaultId;
   
-  // Jika input berupa URL penuh (misal: https://open.spotify.com/track/3BJe4B8zGn...)
   if (input.includes("/track/")) {
     return input.split("/track/")[1]?.split("?")[0];
   }
   
-  // Jika input berupa ID dengan query (misal: 7Hc6qcJG4NtyZgbNvQyd8U?si=...)
   return input.split("?")[0];
 };
 

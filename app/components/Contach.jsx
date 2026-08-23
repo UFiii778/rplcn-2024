@@ -6,7 +6,6 @@ import Image from "next/image";
 import { sendEmail } from "@/app/actions/sendEmail";
 import { motion, AnimatePresence } from "motion/react";
 import { Mail, MessageSquare, MapPin, Phone, Loader2, CheckCircle2 } from "lucide-react";
-import Aurora from "./reactbits/Aurora";
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -41,17 +40,6 @@ const Contact = () => {
 
   return (
     <section id="contact" className="w-full bg-white text-black py-20 px-[5%] sm:px-[10%] min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-
-
-      <div className="absolute inset-0 pointer-events-none z-0 opacity-25 transform rotate-180">
-        <Aurora
-          colorStops={["#000000", "#6366f1", "#FF0000"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.6}
-        />
-      </div>
-
 
       <motion.div
         initial={{ opacity: 0 }}

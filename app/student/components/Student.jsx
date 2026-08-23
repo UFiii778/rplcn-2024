@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ImageWithSkeleton from '@/app/components/ImageWithSkeleton';
 import { studentsData, waliKelas } from '@/data/students';
 import { Search } from 'lucide-react';
 
@@ -45,7 +46,7 @@ export default function StudentListPage() {
           >
             <div className="bg-slate-900 rounded-[23px] p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-8">
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border border-slate-700 flex-shrink-0">
-                <Image src={waliKelas.image} alt={waliKelas.name} fill className="object-cover" />
+                <ImageWithSkeleton src={waliKelas.image} alt={waliKelas.name} fill className="object-cover" />
               </div>
               <div className="text-center sm:text-left space-y-3">
                 <span className="text-xs uppercase font-bold tracking-widest bg-slate-800 text-yellow-300 px-4 py-1.5 rounded-full inline-block">
@@ -86,7 +87,7 @@ export default function StudentListPage() {
 
               <div className="absolute inset-0 top-16 bottom-20 flex items-center justify-center overflow-hidden pointer-events-none">
                 <div className="relative w-full h-full">
-                  <Image
+                  <ImageWithSkeleton
                     src={student.image}
                     alt={student.name}
                     fill
@@ -100,7 +101,7 @@ export default function StudentListPage() {
               <div className="w-full bg-slate-950 border border-slate-800 rounded-2xl p-2.5 flex items-center justify-between z-10">
                 <div className="flex items-center gap-2 min-w-0">
                   <div className="relative w-7 h-7 rounded-full overflow-hidden border border-slate-700 flex-shrink-0">
-                    <Image
+                    <ImageWithSkeleton
                       src={student.image}
                       alt={student.name}
                       fill

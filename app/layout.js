@@ -17,26 +17,16 @@ export const metadata = {
   title: "RPLG ICN",
   description: "RPLG 2024-2027",
   icons: {
-    icon: [
-      {
-        url: '/icon-light.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-    ],
+    icon: "/icon.png",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en" className="scroll-smooth"
-
+      lang="en" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning
     >
-      <body className={`${outfit.variable} ${ovo.variable} antialiased`}>
+      <body className={`${outfit.variable} ${ovo.variable} antialiased`} suppressHydrationWarning>
         {children}
       </body>
     </html>

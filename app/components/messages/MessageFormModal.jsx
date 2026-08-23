@@ -84,6 +84,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
 
                     <input
                         type="text"
+                        suppressHydrationWarning
                         name="website_url"
                         value={honeypot}
                         onChange={(e) => setHoneypot(e.target.value)}
@@ -98,6 +99,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                         </label>
                         <select
                             value={recipientId}
+                            suppressHydrationWarning
                             onChange={(e) => setRecipientId(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:border-indigo-500 focus:outline-none"
                         >
@@ -112,6 +114,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                     <div className="flex bg-slate-950 p-1 rounded-xl border border-slate-800">
                         <button
                             type="button"
+                            suppressHydrationWarning
                             onClick={() => setIsAnonymous(true)}
                             className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${
                                 isAnonymous ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"
@@ -121,6 +124,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                         </button>
                         <button
                             type="button"
+                            suppressHydrationWarning
                             onClick={() => setIsAnonymous(false)}
                             className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${
                                 !isAnonymous ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-white"
@@ -135,6 +139,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                             <input
                                 type="text"
                                 placeholder="Nama Kamu *"
+                                suppressHydrationWarning
                                 required
                                 value={senderName}
                                 onChange={(e) => setSenderName(e.target.value)}
@@ -143,6 +148,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                             <div className="grid grid-cols-2 gap-2">
                                 <input
                                     type="text"
+                                    suppressHydrationWarning
                                     placeholder="Instagram (opsional)"
                                     value={senderIg}
                                     onChange={(e) => setSenderIg(e.target.value)}
@@ -150,6 +156,7 @@ export default function MessageFormModal({ selectedRecipientId, onClose, onSucce
                                 />
                                 <input
                                     type="text"
+                                    suppressHydrationWarning
                                     placeholder="Kelas (opsional)"
                                     value={senderClass}
                                     onChange={(e) => setSenderClass(e.target.value)}
