@@ -356,10 +356,10 @@ export const studentsData = [
     image3: `${STORAGE_URL}/rendra1.jpg`,
     birthdate: "??",
     favoriteFood: "??",
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
-    spotifyTrackId2: "7Hc6qcJG4NtyZgbNvQyd8U?si=69354c48b804403e",
+    spotifyTrackId: "5y2ijHECwFYWqcAHKTZgzD?si=7528d09886774f74",
+    spotifyTrackId2: "0urpBLpcm6DOGzs86rcKd8?si=f5c59f08a9de45ff",
     instagram: "prdpttt",
-    about: "Gak Immo gak tidur"
+    about: "Because the Struggle is a sign of your journey to success"
   },
   {
     id: "reysal",
