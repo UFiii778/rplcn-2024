@@ -178,7 +178,7 @@ export const studentsData = [
     favoriteFood: "??",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "2nMeu6UenVvwUktBCpLMK9?si=1a439378d29e46e5",
-    instagram: "??",
+    instagram: "imnotibnu",
     about: "Something About ICN"
   },
   {
@@ -386,7 +386,7 @@ export const studentsData = [
     image3: "https://picsum.photos/id/1003/800/600",
     birthdate: "??",
     favoriteFood: "??",
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId: "4cBm8rv2B5BJWU2pDaHVbF?si=e3c57ce0466f45a5",
     spotifyTrackId2: "7Hc6qcJG4NtyZgbNvQyd8U?si=69354c48b804403e",
     instagram: "rio_12323232",
     about: "Something About ICN"
