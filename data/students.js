@@ -44,7 +44,7 @@ export const studentsData = [
     spotifyTrackId: "5GWZujUo8gzc8qcf3KVIAN?si=002b589cb80f4b90",
     spotifyTrackId2: "77nJfbFdx8UbzBrgll9OvM?si=e62f7b5b17b24932",
     instagram: "shootasheed",
-    about: "Jayalah Pemimpinku"
+    about: "Ad astra per aspera."
   },
   {
     id: "alfathir-azka",
@@ -261,7 +261,7 @@ export const studentsData = [
     name: "Nabeel Hilma",
     nickname: "xNv",
     role: "Student / Developer",
-    image: `${STORAGE_URL}/nabel1.jpg`,
+    image: `${STORAGE_URL}/nabeel02.jpeg`,
     image2: `${STORAGE_URL}/nabel.jpg`,
     image3: "https://tse3.mm.bing.net/th/id/OIP.a3-9LwFrvjtLn9Ba4tmzgwAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
     birthdate: "17 Maret 2009",
@@ -302,7 +302,7 @@ export const studentsData = [
     about: "Something About ICN"
   },
   {
-    id: "Rafli",
+    id: "rapli",
     name: "Rafli Nadzriel",
     nickname: "Plii",
     role: "Student / Developer",
@@ -341,8 +341,8 @@ export const studentsData = [
     image3: "https://picsum.photos/id/1008/800/600",
     birthdate: "??",
     favoriteFood: "??",
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
-    spotifyTrackId2: "7Hc6qcJG4NtyZgbNvQyd8U?si=69354c48b804403e",
+    spotifyTrackId: "3Zf41PEoASMmQ3srywHJ5s?si=4ecda731158143fe",
+    spotifyTrackId2: "3nhNrJEKrt5HRIYL6PTOJu?si=fce1e6628c154c24",
     instagram: "vouyearn",
     about: "Something About ICN"
   },
@@ -401,7 +401,7 @@ export const studentsData = [
     image3: `${STORAGE_URL}/adit01.jpg`,
     birthdate: "??",
     favoriteFood: "??",
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId: "49j6SvuvWfbEKZKzsHCdLJ?si=b6777f221408422c",
     spotifyTrackId2: "65vdMBskhx3akkG9vQlSH1?si=57d1642ea30a493e",
     instagram: "dittzyyy_",
     about: "Something About ICN"
