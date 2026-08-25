@@ -10,7 +10,6 @@ import BentoSection from "./components/BentoSection";
 import Gallery from "./components/Gallery";
 import Next from "./components/Next";
 import Certificates from "./components/Cerificates";
-import Contact from "./components/Contach";
 import Footer from "./components/Footer";
 
 export default function Home() {
