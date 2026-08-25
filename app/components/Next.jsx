@@ -15,7 +15,7 @@ const certificates = [
     issuer: "XII RPL",
     description: "Send a secret message or share your thoughts with all the students and the class teacher anonymously.",
     image: "https://images.unsplash.com/photo-1663813116840-cef0040331fe?q=80&w=1214&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    colors: [[0, 183, 255]], // Biru
+    colors: [[0, 183, 255]],
     animationSpeed: 3,
     link: "/message"
   },
@@ -25,7 +25,7 @@ const certificates = [
     issuer: "XII RPL",
     description: "View the full profiles of all classmates, including their personal details and social media accounts.",
     image: assets.memo1.src,
-    colors: [[239, 68, 68]], // Merah
+    colors: [[239, 68, 68]],
     animationSpeed: 3,
     link: "/student"
   },
@@ -35,7 +35,7 @@ const certificates = [
     issuer: "XII RPL",
     description: "A record of exciting moments, memories, and shared activities during the time in the Class XII RPL.",
     image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1000&auto=format&fit=crop",
-    colors: [[236, 72, 153]], // Pink
+    colors: [[236, 72, 153]],
     animationSpeed: 3,
     link: "/gallery"
   }
@@ -70,8 +70,8 @@ const Card = ({ cert, index }) => {
   const router = useRouter();
 
   const handleNavigate = (e, path) => {
-    e.preventDefault(); 
-    router.push(path);  
+    e.preventDefault();
+    router.push(path);
   };
 
   return (
@@ -113,14 +113,14 @@ const Card = ({ cert, index }) => {
           />
         </div>
 
-        <div className="flex flex-col mt-4 transition-colors duration-300 group-hover/canvas-card:text-white">
-          <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 group-hover/canvas-card:text-gray-300 mb-1">
+        <div className="flex flex-col mt-4 transition-colors duration-300">
+          <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 group-hover/canvas-card:text-gray-200 mb-1 transition-colors duration-300">
             {cert.issuer}
           </span>
-          <h3 className="text-xl font-bold text-gray-800 group-hover/canvas-card:text-white mb-2 font-Ovo">
+          <h3 className="text-xl font-bold text-gray-800 group-hover/canvas-card:text-white mb-2 font-Ovo transition-colors duration-300">
             {cert.title}
           </h3>
-          <p className="text-gray-600 group-hover/canvas-card:text-gray-200 text-sm line-clamp-3 font-Ovo">
+          <p className="text-gray-600 group-hover/canvas-card:text-white text-sm line-clamp-3 font-Ovo transition-colors duration-300 drop-shadow-sm">
             {cert.description}
           </p>
         </div>

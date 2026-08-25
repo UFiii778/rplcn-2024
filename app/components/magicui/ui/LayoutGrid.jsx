@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { IoClose } from "react-icons/io5"; // Menggunakan icon IoClose dari react-icons
+import { IoClose } from "react-icons/io5";
 
 export const LayoutGrid = ({ cards }) => {
   const [selected, setSelected] = useState(null);
@@ -27,7 +27,7 @@ export const LayoutGrid = ({ cards }) => {
             className={cn(
               "relative overflow-hidden cursor-pointer rounded-xl h-full w-full",
               selected?.id === card.id
-                ? "fixed inset-0 m-auto z-50 max-w-3xl max-h-[80vh] w-[90vw] h-[80vh] flex flex-col justify-end shadow-2xl"
+                ? "fixed inset-0 m-auto z-50 max-w-4xl max-h-[85vh] w-[92vw] md:w-[85vw] flex flex-col justify-between shadow-2xl bg-black/90 rounded-2xl overflow-hidden"
                 : lastSelected?.id === card.id
                 ? "z-40 bg-white"
                 : "bg-white"
@@ -38,27 +38,34 @@ export const LayoutGrid = ({ cards }) => {
             {selected?.id === card.id && (
               <button
                 onClick={(e) => {
-                  e.stopPropagation(); // Mencegah pemicu event click di parent
+                  e.stopPropagation();
                   handleOutsideClick();
                 }}
-                className="absolute top-4 right-4 z-[80] flex items-center gap-2 bg-black/60 hover:bg-black/80 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-xs font-medium transition-colors border border-white/20 shadow-lg"
+                className="absolute top-4 right-4 z-[80] flex items-center gap-2 bg-black/70 hover:bg-black/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-full text-xs font-medium transition-all border border-white/20 shadow-lg"
               >
                 <IoClose className="w-4 h-4" />
                 <span>Back</span>
               </button>
             )}
 
-            {selected?.id === card.id && <SelectedCard selected={selected} />}
-            <ImageComponent card={card} />
+            {/* Container Gambar & Teks */}
+            {selected?.id === card.id ? (
+              <div className="relative w-full h-full flex items-center justify-center bg-black/40 overflow-hidden">
+                <ImageComponent card={card} isSelected={true} />
+                <SelectedCard selected={selected} />
+              </div>
+            ) : (
+              <ImageComponent card={card} isSelected={false} />
+            )}
           </motion.div>
         </div>
       ))}
-      
+
       {/* Overlay Gelap Latar Belakang */}
       <motion.div
         onClick={handleOutsideClick}
         className={cn(
-          "fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity",
+          "fixed inset-0 bg-black/70 backdrop-blur-md z-40 transition-opacity duration-300",
           selected?.id ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
       />
@@ -66,12 +73,17 @@ export const LayoutGrid = ({ cards }) => {
   );
 };
 
-const ImageComponent = ({ card }) => {
+const ImageComponent = ({ card, isSelected }) => {
   return (
     <motion.img
       layoutId={`image-${card.id}-image`}
       src={card.thumbnail}
-      className="object-cover object-center absolute inset-0 h-full w-full transition duration-300"
+      className={cn(
+        "transition duration-300",
+        isSelected
+          ? "w-full h-full object-contain max-h-[85vh] p-2 sm:p-4" // object-contain agar foto utuh & tidak terpotong
+          : "absolute inset-0 h-full w-full object-cover object-center" // grid thumbnail tetap rapi
+      )}
       alt="thumbnail"
     />
   );
@@ -79,14 +91,14 @@ const ImageComponent = ({ card }) => {
 
 const SelectedCard = ({ selected }) => {
   return (
-    <div className="h-full w-full flex flex-col justify-end rounded-xl relative z-[60] p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+    <div className="absolute inset-x-0 bottom-0 z-[60] p-4 sm:p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none">
       <motion.div
         layoutId={`content-${selected?.id}`}
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
+        exit={{ opacity: 0, y: 15 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="relative z-[70] text-white"
+        className="relative z-[70] text-white max-w-xl"
       >
         {selected?.content}
       </motion.div>

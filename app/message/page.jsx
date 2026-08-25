@@ -1,24 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 import { studentsData, waliKelas } from "@/data/students";
-import { assets } from "@/assets/assets";
-import MessageFormModal from "@/app/components/messages/MessageFormModal";
 import MessageSection from "@/app/message/MessageSection";
 import Footer from "../components/Footer";
-import { Search } from "lucide-react";
 
 export default function MessagePage() {
   const allMembers = [waliKelas, ...studentsData];
 
-  // State Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRecipientId, setSelectedRecipientId] = useState(null);
 
-  // State Search & Limit Expand
   const [searchQuery, setSearchQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(5);
 

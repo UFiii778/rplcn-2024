@@ -65,12 +65,14 @@ export default function BentoSection() {
                     icon={<CheckSquare className="h-5 w-5" />}
                     title="Hello There!"
                     description="This is the official website for RPLCN 2024, version two."
+                    image="https://cdn3d.iconscout.com/3d/premium/thumb/robot-say-hi-3d-icon-png-download-7746773.png?f=webp"
                 />
                 <GridItem
                     area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
                     icon={<Settings className="h-5 w-5" />}
                     title="What a learn?"
                     description="We learn a lot of things in this class"
+                    image="https://img.magnific.com/free-photo/data-center-facility-employing-deep-learning-technology_482257-122622.jpg?semt=ais_hybrid&w=740&q=80"
                 />
                 <GridItem
                     area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
