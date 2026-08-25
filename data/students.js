@@ -51,13 +51,13 @@ export const studentsData = [
     name: "Alfathir Azka",
     nickname: "Alfathir",
     role: "Student / Developer",
-    image: "https://picsum.photos/id/127/400/400",
-    image2: "https://picsum.photos/id/1028/400/400",
+    image: `${STORAGE_URL}/alfathir1.jpeg`,
+    image2: `${STORAGE_URL}/alfathir02.jpeg`,
     image3: "https://picsum.photos/id/1029/800/600",
     birthdate: "??",
     favoriteFood: "??",
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
-    spotifyTrackId2: "7Hc6qcJG4NtyZgbNvQyd8U?si=69354c48b804403e",
+    spotifyTrackId: "6J3pPfXLujwsWQpvR6XMgC?si=d3b1c62ae19240ce",
+    spotifyTrackId2: "46PAwa5NbfPUE5rZ0w2Tcw?si=d8b8bb0c822147ef",
     instagram: "??",
     about: "What?"
   },
@@ -153,7 +153,7 @@ export const studentsData = [
   },
   {
     id: "acel",
-    name: "Freddrick Marcelino",
+    name: "Fredderick Marcellino",
     nickname: "acel",
     role: "Student / Developer",
     image: `${STORAGE_URL}/freddrick1.jpg`,
@@ -161,7 +161,7 @@ export const studentsData = [
     image3: "https://picsum.photos/id/108/800/600",
     birthdate: "??",
     favoriteFood: "??",
-    spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
+    spotifyTrackId: "1fLlRApgzxWweF1JTf8yM5?si=86e3128eb5b44c51",
     spotifyTrackId2: "7Hc6qcJG4NtyZgbNvQyd8U?si=69354c48b804403e",
     instagram: "frxchd_",
     about: "Something About ICN"
@@ -239,7 +239,7 @@ export const studentsData = [
     spotifyTrackId: "4xoY4lZNoTjEuHsSmhgF1G?si=81929b16d7e047f9",
     spotifyTrackId2: "630DpnzdfjdVqv2yLfPbAX?si=b0378b1a568644b4",
     instagram: "luthfiiizzz_",
-    about: "Something About ICN"
+    about: "先生、先生に診ていただけて光栄でした。"
   },
   {
     id: "ilham",
@@ -262,8 +262,8 @@ export const studentsData = [
     nickname: "xNv",
     role: "Student / Developer",
     image: `${STORAGE_URL}/nabeel02.jpeg`,
-    image2: `${STORAGE_URL}/nabel.jpg`,
-    image3: "https://tse3.mm.bing.net/th/id/OIP.a3-9LwFrvjtLn9Ba4tmzgwAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    image2: `${STORAGE_URL}/nabeel09.jpeg`,
+    image3: `${STORAGE_URL}/nabeel04.jpeg`,
     birthdate: "17 Maret 2009",
     favoriteFood: "Coca Cola",
     spotifyTrackId: "2MRl1sh8zwa7kh4YeG7g6e?si=e3e2c8cabfd14d50",
@@ -333,15 +333,15 @@ export const studentsData = [
   },
   {
     id: "voenya",
-    name: "Randi bin akhzein",
+    name: "Randi Maulana",
     nickname: "maulnana",
     role: "Student / Developer",
     image: `${STORAGE_URL}/randi.jpg`,
     image2: `${STORAGE_URL}/randi-kef-rapli.jpg`,
-    image3: "https://picsum.photos/id/1008/800/600",
+    image3: `${STORAGE_URL}/randi.jpeg`,
     birthdate: "??",
     favoriteFood: "??",
-    spotifyTrackId: "3Zf41PEoASMmQ3srywHJ5s?si=4ecda731158143fe",
+    spotifyTrackId: "3nhNrJEKrt5HRIYL6PTOJu?si=e2ee5441e405416d",
     spotifyTrackId2: "3nhNrJEKrt5HRIYL6PTOJu?si=fce1e6628c154c24",
     instagram: "vouyearn",
     about: "Something About ICN"
@@ -367,8 +367,8 @@ export const studentsData = [
     nickname: "resal",
     role: "Student / Developer",
     image: `${STORAGE_URL}/reysal1.jpg`,
-    image2: `${STORAGE_URL}/reysal.jpg`,
-    image3: "https://picsum.photos/id/1029/800/600",
+    image2: `${STORAGE_URL}/reysal32.jpeg`,
+    image3: `${STORAGE_URL}/reysal21.jpeg`,
     birthdate: "??",
     favoriteFood: "??",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
@@ -401,10 +401,10 @@ export const studentsData = [
     image3: `${STORAGE_URL}/adit01.jpg`,
     birthdate: "??",
     favoriteFood: "??",
-    spotifyTrackId: "49j6SvuvWfbEKZKzsHCdLJ?si=b6777f221408422c",
+    spotifyTrackId: "65vdMBskhx3akkG9vQlSH1?si=f58da1db2d5745e8",
     spotifyTrackId2: "65vdMBskhx3akkG9vQlSH1?si=57d1642ea30a493e",
     instagram: "dittzyyy_",
-    about: "Something About ICN"
+    about: "discipline is something to practice, not something to be commanded"
   },
   {
     id: "satria",

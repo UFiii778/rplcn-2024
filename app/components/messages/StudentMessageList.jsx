@@ -39,7 +39,7 @@ export default function StudentMessageList({ studentId, studentName }) {
   return (
     <section className="w-full max-w-4xl mx-auto py-8 px-4 text-slate-950 space-y-6">
       <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-        <h3 className="text-lg sm:text-xl font-bold flex items-center gap-2 text-white">
+        <h3 className="text-lg sm:text-xl font-bold flex items-center gap-2 text-black">
           <span>Incoming Message for {studentName}</span>
           <span className="text-xs bg-sky-500/10 text-sky-400 px-2.5 py-1 rounded-full border border-sky-500/20">
             {messages.length} Messages
