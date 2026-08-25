@@ -342,7 +342,7 @@ export const studentsData = [
     birthdate: "??",
     favoriteFood: "??",
     spotifyTrackId: "3nhNrJEKrt5HRIYL6PTOJu?si=e2ee5441e405416d",
-    spotifyTrackId2: "3nhNrJEKrt5HRIYL6PTOJu?si=fce1e6628c154c24",
+    spotifyTrackId2: "47Yl5Kadv5UJkoI9Y5UBqH?si=8292c6a99d104f1b",
     instagram: "vouyearn",
     about: "Something About ICN"
   },
