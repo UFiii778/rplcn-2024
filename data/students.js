@@ -314,7 +314,7 @@ export const studentsData = [
     spotifyTrackId: "2bdVgAQgosGUJoViVDNeOV?si=5c966d3ff5af4f9e",
     spotifyTrackId2: "7JIuqL4ZqkpfGKQhYlrirs?si=4298436b252a4989",
     instagram: "rfnzlhm_",
-    about: "Something About ICN"
+    about: "Life is not about money, but money is about life."
   },
   {
     id: "ehan",
