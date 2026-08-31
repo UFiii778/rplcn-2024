@@ -188,16 +188,25 @@ function MessagePreviewModal({ data, studentName, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
+      />
+
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        className="bg-stone-100 rounded-3xl p-6 max-w-md w-full space-y-6 shadow-2xl relative"
+        onClick={(e) => e.stopPropagation()} 
+        className="bg-stone-100 rounded-3xl p-6 max-w-md w-full space-y-6 shadow-2xl relative z-[110] max-h-[85vh] overflow-y-auto"
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-slate-100 p-2 rounded-full bg-slate-900 transition-colors"
+          className="absolute top-4 right-4 text-slate-100 p-2 rounded-full bg-slate-900 hover:bg-slate-800 transition-colors z-[120]"
         >
           <X className="w-5 h-5" />
         </button>
@@ -217,7 +226,7 @@ function MessagePreviewModal({ data, studentName, onClose }) {
             <span className="text-[10px] text-slate-500">Message</span>
           </div>
 
-          <p className="text-sm sm:text-base text-slate-100 italic leading-relaxed py-2">
+          <p className="text-sm sm:text-base text-slate-100 italic leading-relaxed py-2 max-h-[40vh] overflow-y-auto pr-1">
             "{data.message}"
           </p>
 
