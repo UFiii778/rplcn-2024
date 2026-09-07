@@ -82,9 +82,9 @@ const Gallery = () => {
             href="https://www.instagram.com/rplcn24?"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-3 border border-white/20 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white font-semibold hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2"
+            className="px-10 py-3 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white font-semibold hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2"
           >
-            Check out our classes <BsInstagram className="w-4 h-4" />
+            Check out our classes <BsInstagram className="w-7 h-7" />
           </a>
         </div>
       </div>

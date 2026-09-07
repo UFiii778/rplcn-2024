@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { studentsData, waliKelas } from "@/data/students";
-import { LockIcon, User } from "lucide-react";
+import { LockIcon, User, ChevronDown, Check } from "lucide-react";
 import { FaCheckCircle, FaUserSecret, FaInstagram } from "react-icons/fa";
 
 export default function MessageSection() {
@@ -203,7 +203,7 @@ export default function MessageSection() {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-stone-800/80 rounded-2xl overflow-hidden shadow-xl">
+        <form onSubmit={handleSubmit} className="bg-stone-800/80 rounded-2xl shadow-xl relative">
           <input
             type="text"
             name="website_url"
@@ -213,7 +213,8 @@ export default function MessageSection() {
             tabIndex={-1}
             autoComplete="off"
           />
-          <div className="bg-slate-700/50 px-6 py-3 border-b border-slate-700 text-sm font-semibold text-slate-300">
+
+          <div className="bg-slate-700/50 px-6 py-3 border-b border-slate-700 text-sm font-semibold text-slate-300 rounded-t-2xl">
             Please enter your message.
           </div>
 
@@ -259,20 +260,14 @@ export default function MessageSection() {
               />
             </div>
 
-            <div className="flex flex-col justify-between gap-3 min-w-[180px]">
+            <div className="flex flex-col justify-between gap-3 min-w-[180px] sm:min-w-[220px]">
               <div className="space-y-1">
                 <label className="text-xs font-semibold text-slate-200">For Who?</label>
-                <select
-                  value={recipientId}
-                  onChange={(e) => setRecipientId(e.target.value)}
-                  className="w-full bg-stone-950 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-sky-500"
-                >
-                  {allMembers.map((m) => (
-                    <option key={m.id} value={m.id}>
-                      {m.name}
-                    </option>
-                  ))}
-                </select>
+                <IpadDropdown
+                  members={allMembers}
+                  selectedId={recipientId}
+                  onSelect={(id) => setRecipientId(id)}
+                />
               </div>
 
               <button
@@ -330,6 +325,68 @@ export default function MessageSection() {
       </AnimatePresence>
 
     </section>
+  );
+}
+
+function IpadDropdown({ members, selectedId, onSelect }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const selectedMember = members.find((m) => m.id === selectedId);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className="relative w-full z-30" ref={dropdownRef}>
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full bg-stone-950/90 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white flex items-center justify-between shadow-md hover:bg-stone-900 transition-all"
+      >
+        <span className="truncate pr-2">{selectedMember ? selectedMember.name : "Select Student"}</span>
+        <ChevronDown className={`w-3.5 h-3.5 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: -5 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -5 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="absolute top-full mt-1 left-0 right-0 w-full max-h-52 overflow-y-auto rounded-2xl bg-slate-950/95 backdrop-blur-xl border border-white/15 shadow-2xl p-1 z-50 text-xs text-slate-200 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
+            {members.map((m) => {
+              const isSelected = m.id === selectedId;
+              return (
+                <div
+                  key={m.id}
+                  onClick={() => {
+                    onSelect(m.id);
+                    setIsOpen(false);
+                  }}
+                  className={`flex items-center justify-between px-3 py-2 my-0.5 rounded-xl cursor-pointer transition-colors ${isSelected
+                      ? "bg-sky-500/25 text-sky-400 font-semibold"
+                      : "hover:bg-white/10 text-slate-200"
+                    }`}
+                >
+                  <span className="truncate">{m.name}</span>
+                  {isSelected && <Check className="w-3.5 h-3.5 text-sky-400 shrink-0 ml-1.5" />}
+                </div>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 

@@ -42,7 +42,7 @@ export default function StudentListPage() {
         <section className="flex justify-center">
           <Link
             href={`/student/${waliKelas.id}`}
-            className="w-full max-w-4xl bg-slate-900 p-[1px] rounded-3xl border border-slate-800 transition-transform hover:scale-[1.01]"
+            className="w-full max-w-4xl bg-slate-900 p-[1px] rounded-3xl transition-transform hover:scale-[1.01]"
           >
             <div className="bg-slate-900 rounded-[23px] p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-8">
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border border-slate-700 flex-shrink-0">

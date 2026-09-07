@@ -32,6 +32,7 @@ export default function StudentMessageList({ studentId, studentName }) {
     }
   };
 
+
   useEffect(() => {
     fetchStudentMessages();
   }, [studentId]);
@@ -127,10 +128,21 @@ function MessagePreviewModal({ data, studentName, onClose }) {
   const cardRef = useRef(null);
   const [downloading, setDownloading] = useState(false);
 
+  // Efek samping untuk menyembunyikan Navbar dan mengunci scroll latar belakang
+  useEffect(() => {
+    document.body.classList.add("modal-open");
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+
   const nameLabel = data.is_anonymous
     ? "Anonymous"
     : data.sender_name || "Somebody";
-  
+
   const formattedIg = data.sender_ig
     ? `@${data.sender_ig.replace(/^@/, '')}`
     : null;
@@ -154,8 +166,8 @@ function MessagePreviewModal({ data, studentName, onClose }) {
   };
 
   const handleShareWhatsApp = () => {
-    const fromText = !data.is_anonymous && formattedIg 
-      ? `${nameLabel} (${formattedIg})` 
+    const fromText = !data.is_anonymous && formattedIg
+      ? `${nameLabel} (${formattedIg})`
       : nameLabel;
 
     const text = `Pesan Rahasia untuk *${studentName}*:\n\n"${data.message}"\n\nDari: ${fromText}`;
@@ -164,8 +176,8 @@ function MessagePreviewModal({ data, studentName, onClose }) {
   };
 
   const handleShareInstagram = async () => {
-    const fromText = !data.is_anonymous && formattedIg 
-      ? `${nameLabel} (${formattedIg})` 
+    const fromText = !data.is_anonymous && formattedIg
+      ? `${nameLabel} (${formattedIg})`
       : nameLabel;
 
     const shareText = `Secret Message for ${studentName}: "${data.message}" - From: ${fromText}`;
@@ -188,7 +200,7 @@ function MessagePreviewModal({ data, studentName, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -201,12 +213,16 @@ function MessagePreviewModal({ data, studentName, onClose }) {
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        onClick={(e) => e.stopPropagation()} 
-        className="bg-stone-100 rounded-3xl p-6 max-w-md w-full space-y-6 shadow-2xl relative z-[110] max-h-[85vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+        /* 
+           Hapus 'max-h-[85vh]' dan 'overflow-y-auto' 
+           Ganti dengan 'h-auto' agar tinggi modal mengikuti panjang kontennya secara alami
+        */
+        className="bg-stone-100 rounded-3xl p-6 max-w-md w-full space-y-6 shadow-2xl relative z-[110] h-auto"
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-slate-100 p-2 rounded-full bg-slate-900 hover:bg-slate-800 transition-colors z-[120]"
+          className="absolute top-4 right-4 text-slate-100 p-2 rounded-full bg-slate-900 hover:bg-slate-800 transition-colors z-[10002]"
         >
           <X className="w-5 h-5" />
         </button>
@@ -226,7 +242,7 @@ function MessagePreviewModal({ data, studentName, onClose }) {
             <span className="text-[10px] text-slate-500">Message</span>
           </div>
 
-          <p className="text-sm sm:text-base text-slate-100 italic leading-relaxed py-2 max-h-[40vh] overflow-y-auto pr-1">
+          <p className="text-sm sm:text-base text-slate-100 italic leading-relaxed py-2 max-h-[40vh] overflow-y-auto pr-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             "{data.message}"
           </p>
 
@@ -236,7 +252,7 @@ function MessagePreviewModal({ data, studentName, onClose }) {
               <span className="font-semibold text-white bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">
                 {nameLabel}
               </span>
-              
+
               {!data.is_anonymous && formattedIg && (
                 <a
                   href={`https://instagram.com/${formattedIg.replace('@', '')}`}
