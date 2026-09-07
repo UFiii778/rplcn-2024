@@ -8,6 +8,7 @@ export default function ImageWithSkeleton({
   className = "",
   containerClassName = "",
   fill,
+  isSelected = false, // Destructure prop ini agar tidak terpasang ke tag <img>
   ...props
 }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,12 +23,12 @@ export default function ImageWithSkeleton({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setShouldLoad(true); 
+            setShouldLoad(true);
             observer.disconnect();
           }
         });
       },
-      { rootMargin: "200px" } 
+      { rootMargin: "200px" }
     );
 
     observer.observe(containerRef.current);
@@ -44,10 +45,12 @@ export default function ImageWithSkeleton({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden ${fill ? "w-full h-full" : ""} ${containerClassName}`}
+      className={`relative overflow-hidden ${
+        fill || isSelected ? "w-full h-full" : ""
+      } ${containerClassName}`}
     >
       {isLoading && (
-        <div className="absolute inset-0 bg-slate-800 animate-pulse flex items-center justify-center z-10">
+        <div className="absolute inset-0 bg-slate-800 animate-pulse flex items-center justify-center z-10 min-h-[200px]">
           <div className="w-8 h-8 border-2 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" />
         </div>
       )}
@@ -63,7 +66,13 @@ export default function ImageWithSkeleton({
           onError={() => setIsLoading(false)}
           className={`transition-opacity duration-300 ease-in-out ${
             isLoading ? "opacity-0" : "opacity-100"
-          } ${fill ? "w-full h-full object-cover" : ""} ${className}`}
+          } ${
+            isSelected
+              ? "w-auto h-auto max-w-[90vw] max-h-[80vh] object-contain block mx-auto"
+              : fill
+              ? "w-full h-full object-cover"
+              : ""
+          } ${className}`}
           {...props}
         />
       )}

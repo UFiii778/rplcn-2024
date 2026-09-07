@@ -65,8 +65,8 @@ const Navbar = () => {
                             items={items}
                             baseColor="rgba(17, 24, 39, 0.65)"
                             menuColor="#ffffff"
-                            buttonBgColor="#38bdf8"
-                            buttonTextColor="#0f172a"
+                            buttonBgColor="#2E2E2E"
+                            buttonTextColor="#ffffff"
                             ease="power3.out"
                         />
                     </div>

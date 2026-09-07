@@ -1,14 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { IoClose } from "react-icons/io5";
+import ImageWithSkeleton from "@/app/components/ImageWithSkeleton";
 
 export const LayoutGrid = ({ cards }) => {
   const [selected, setSelected] = useState(null);
   const [lastSelected, setLastSelected] = useState(null);
 
-  // Menyembunyikan Navbar (melepas/menambah class modal-open)
   useEffect(() => {
     if (selected) {
       document.body.classList.add("modal-open");
@@ -33,48 +33,53 @@ export const LayoutGrid = ({ cards }) => {
 
   return (
     <div className="w-full h-full p-4 md:p-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative">
-      {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "relative")}>
-          <motion.div
-            onClick={() => handleClick(card)}
-            className={cn(
-              "relative overflow-hidden cursor-pointer rounded-xl h-full w-full",
-              selected?.id === card.id
-                ? "fixed inset-0 m-auto z-50 max-w-[90vw] max-h-[85vh] w-fit h-fit flex flex-col justify-center items-center shadow-2xl bg-black/90 rounded-2xl overflow-hidden"
-                : lastSelected?.id === card.id
-                ? "z-40 bg-white"
-                : "bg-white"
-            )}
-            layoutId={`card-${card.id}`}
-          >
-            {/* Tombol Back / Close */}
-            {selected?.id === card.id && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleOutsideClick();
-                }}
-                className="absolute top-4 right-4 z-[80] flex items-center gap-2 bg-black/70 hover:bg-black/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-full text-xs font-medium transition-all border border-white/20 shadow-lg"
-              >
-                <IoClose className="w-4 h-4" />
-                <span>Back</span>
-              </button>
-            )}
+      {cards.map((card, i) => {
+        const isCardSelected = selected?.id === card.id;
 
-            {/* Container Gambar & Teks */}
-            {selected?.id === card.id ? (
-              <div className="relative w-full h-full flex items-center justify-center bg-black/40 overflow-hidden">
-                <ImageComponent card={card} isSelected={true} />
-                <SelectedCard selected={selected} />
-              </div>
-            ) : (
-              <ImageComponent card={card} isSelected={false} />
-            )}
-          </motion.div>
-        </div>
-      ))}
+        return (
+          <div key={i} className={cn(card.className, "relative")}>
+            <motion.div
+              onClick={() => handleClick(card)}
+              className={cn(
+                "relative overflow-hidden cursor-pointer rounded-xl h-full w-full min-h-[250px]",
+                isCardSelected
+                  ? "fixed inset-0 m-auto z-50 max-w-[90vw] max-h-[85vh] w-fit h-fit flex flex-col justify-center items-center shadow-2xl bg-black/90 rounded-2xl"
+                  : lastSelected?.id === card.id
+                  ? "z-40 bg-white"
+                  : "bg-white"
+              )}
+              layoutId={`card-${card.id}`}
+            >
+              {/* Tombol Close */}
+              {isCardSelected && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOutsideClick();
+                  }}
+                  className="absolute top-4 right-4 z-[80] flex items-center gap-2 bg-black/70 hover:bg-black/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-full text-xs font-medium transition-all border border-white/20 shadow-lg"
+                >
+                  <IoClose className="w-4 h-4" />
+                  <span>Back</span>
+                </button>
+              )}
 
-      {/* Overlay Gelap Latar Belakang */}
+              {/* Komponen Image With Skeleton */}
+              <ImageWithSkeleton
+                src={card.thumbnail}
+                alt="thumbnail"
+                fill={!isCardSelected}
+                isSelected={isCardSelected}
+                containerClassName={isCardSelected ? "w-full h-full flex items-center justify-center" : "w-full h-full"}
+              />
+
+              {isCardSelected && <SelectedCard selected={selected} />}
+            </motion.div>
+          </div>
+        );
+      })}
+
+      {/* Overlay Background */}
       <motion.div
         onClick={handleOutsideClick}
         className={cn(
@@ -83,22 +88,6 @@ export const LayoutGrid = ({ cards }) => {
         )}
       />
     </div>
-  );
-};
-
-const ImageComponent = ({ card, isSelected }) => {
-  return (
-    <motion.img
-      layoutId={`image-${card.id}-image`}
-      src={card.thumbnail}
-      className={cn(
-        "transition duration-300",
-        isSelected
-          ? "w-auto h-auto max-w-[90vw] max-h-[85vh] object-contain block" // Mempertahankan aspek rasio asli tanpa terpotong
-          : "absolute inset-0 h-full w-full object-cover object-center" // Menyesuaikan tampilan grid saat tertutup
-      )}
-      alt="thumbnail"
-    />
   );
 };
 
