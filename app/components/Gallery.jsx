@@ -10,7 +10,7 @@ const cards = [
     id: 1,
     content: (
       <div>
-        <p className="font-bold text-white text-xl md:text-2xl">Pjbl</p>
+        <p className="font-bold text-white text-xl md:text-2xl">Pentas Seni</p>
         <p className="font-normal text-white text-sm my-2">
           Personal captures and coding moments.
         </p>
@@ -38,7 +38,7 @@ const cards = [
       <div>
         <p className="font-bold text-white text-xl md:text-2xl">Happy!</p>
         <p className="font-normal text-white text-sm my-2">
-          Sena,Rehan and the best teacher.
+          Rehan,Sena and the best teacher.
         </p>
       </div>
     ),

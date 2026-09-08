@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LockIcon, User } from "lucide-react";
 import { MdDone } from "react-icons/md";
+import { FaUserSecret } from "react-icons/fa";
 
 export default function StudentMessageSection({ student }) {
   const [isAnonymous, setIsAnonymous] = useState(true);
@@ -76,7 +77,7 @@ export default function StudentMessageSection({ student }) {
             }`}
           >
             <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs">
-              <LockIcon className="w-15 h-15 text-white"/>
+              <FaUserSecret className="w-15 h-15 text-white"/>
             </div>
             <span className="font-bold text-white text-xs sm:text-sm">Anonymous</span>
           </button>

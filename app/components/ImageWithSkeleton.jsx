@@ -45,9 +45,8 @@ export default function ImageWithSkeleton({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden ${
-        fill || isSelected ? "w-full h-full" : ""
-      } ${containerClassName}`}
+      className={`relative overflow-hidden ${fill || isSelected ? "w-full h-full" : ""
+        } ${containerClassName}`}
     >
       {isLoading && (
         <div className="absolute inset-0 bg-slate-800 animate-pulse flex items-center justify-center z-10 min-h-[200px]">
@@ -64,15 +63,13 @@ export default function ImageWithSkeleton({
           decoding="async"
           onLoad={() => setIsLoading(false)}
           onError={() => setIsLoading(false)}
-          className={`transition-opacity duration-300 ease-in-out ${
-            isLoading ? "opacity-0" : "opacity-100"
-          } ${
-            isSelected
-              ? "w-auto h-auto max-w-[90vw] max-h-[80vh] object-contain block mx-auto"
+          className={`transition-opacity duration-300 ease-in-out ${isLoading ? "opacity-0" : "opacity-100"
+            } ${isSelected
+              ? "w-full h-full object-cover object-center block"
               : fill
-              ? "w-full h-full object-cover"
-              : ""
-          } ${className}`}
+                ? "w-full h-full object-cover"
+                : ""
+            } ${className}`}
           {...props}
         />
       )}

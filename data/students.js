@@ -3,7 +3,7 @@ const STORAGE_URL = "https://pfsydgnopvwccxohryvn.supabase.co/storage/v1/object/
 export const waliKelas = {
   id: "wali-kelas",
   name: "Putri Zahra S.Pd.",
-  role: "Wali Kelas",
+  role: "Homeroom Teacher",
   image: `${STORAGE_URL}/buput.jpg`,
   image2: `${STORAGE_URL}/buput1.jpg`,
   image3: "https://picsum.photos/id/66/400/400",
@@ -58,7 +58,7 @@ export const studentsData = [
     favoriteFood: "??",
     spotifyTrackId: "6J3pPfXLujwsWQpvR6XMgC?si=d3b1c62ae19240ce",
     spotifyTrackId2: "46PAwa5NbfPUE5rZ0w2Tcw?si=d8b8bb0c822147ef",
-    instagram: "??",
+    instagram: "",
     about: "What?"
   },
   {
@@ -88,7 +88,7 @@ export const studentsData = [
     favoriteFood: "??",
     spotifyTrackId: "3BJe4B8zGnqEdQPMvfVjuS",
     spotifyTrackId2: "7Hc6qcJG4NtyZgbNvQyd8U?si=69354c48b804403e",
-    instagram: "??",
+    instagram: "",
     about: "Something About ICN"
   },
   {
@@ -239,6 +239,8 @@ export const studentsData = [
     spotifyTrackId: "4xoY4lZNoTjEuHsSmhgF1G?si=81929b16d7e047f9",
     spotifyTrackId2: "630DpnzdfjdVqv2yLfPbAX?si=b0378b1a568644b4",
     instagram: "luthfiiizzz_",
+    twitterX: "kuraoshen",
+    tiktok: "shenkurao",
     about: "先生、先生に診ていただけて光栄でした。"
   },
   {

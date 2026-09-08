@@ -45,8 +45,8 @@ export const LayoutGrid = ({ cards }) => {
                 isCardSelected
                   ? "fixed inset-0 m-auto z-50 max-w-[90vw] max-h-[85vh] w-fit h-fit flex flex-col justify-center items-center shadow-2xl bg-black/90 rounded-2xl"
                   : lastSelected?.id === card.id
-                  ? "z-40 bg-white"
-                  : "bg-white"
+                    ? "z-40 bg-white"
+                    : "bg-white"
               )}
               layoutId={`card-${card.id}`}
             >
@@ -70,7 +70,11 @@ export const LayoutGrid = ({ cards }) => {
                 alt="thumbnail"
                 fill={!isCardSelected}
                 isSelected={isCardSelected}
-                containerClassName={isCardSelected ? "w-full h-full flex items-center justify-center" : "w-full h-full"}
+                containerClassName={
+                  isCardSelected
+                    ? "w-full h-[60vh] sm:h-[70vh] flex items-center justify-center"
+                    : "w-full h-full"
+                }
               />
 
               {isCardSelected && <SelectedCard selected={selected} />}

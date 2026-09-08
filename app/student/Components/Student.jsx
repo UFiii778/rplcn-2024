@@ -28,7 +28,7 @@ export default function StudentListPage() {
       <div className="max-w-7xl mx-auto relative z-10 space-y-12">
 
         <header className="text-center space-y-3">
-          <span className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-slate-900 text-sky-400 border border-slate-800">
+          <span className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase text-slate-400">
             Class Directory
           </span>
           <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-slate-700">
@@ -115,7 +115,7 @@ export default function StudentListPage() {
                     </span>
                     <span className="text-[9px] text-emerald-400 font-medium flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      Masih Hidup
+                      Still Alive
                     </span>
                   </div>
                 </div>
