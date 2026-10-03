@@ -2,16 +2,15 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import ImageWithSkeleton from '@/app/components/ImageWithSkeleton';
-import { studentsData, waliKelas } from '@/data/students';
+import { waliKelas } from '@/data/students';
 import { Search } from 'lucide-react';
 
-export default function StudentListPage() {
+export default function StudentListPage({ students }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(8);
 
-  const filteredStudents = studentsData.filter((student) =>
+  const filteredStudents = students.filter((student) =>
     student.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -20,7 +19,9 @@ export default function StudentListPage() {
     : filteredStudents.slice(0, visibleCount);
 
   const handleExpand = () => {
-    setVisibleCount((prev) => Math.min(prev + 8, studentsData.length));
+    setVisibleCount((prev) =>
+      Math.min(prev + 8, students.length)
+    );
   };
 
   return (

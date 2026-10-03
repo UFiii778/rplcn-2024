@@ -374,7 +374,7 @@ function IpadDropdown({ members, selectedId, onSelect }) {
                     setIsOpen(false);
                   }}
                   className={`flex items-center justify-between px-3 py-2 my-0.5 rounded-xl cursor-pointer transition-colors ${isSelected
-                      ? "bg-sky-500/25 text-sky-400 font-semibold"
+                      ? "bg-sky-500/25 text-slate-200 font-semibold"
                       : "hover:bg-white/10 text-slate-200"
                     }`}
                 >

@@ -1,16 +1,21 @@
-'use client'
-
 import Navbar from "../components/Navbar";
 import StudentListPage from "./components/Student";
 import Footer from "../components/Footer";
 
-export default function Home() {
+import { getStudents } from "@/lib/students";
 
-    return (
-        <>
-            <Navbar />
-            <StudentListPage />
-            <Footer />
-        </>
-    );
+export default async function Home() {
+  const students = await getStudents();
+
+  return (
+    <>
+      <Navbar />
+
+      <StudentListPage
+        students={students}
+      />
+
+      <Footer />
+    </>
+  );
 }

@@ -26,7 +26,7 @@ const Gallery = ({ student, photos }) => {
     <section id="gallery" className="w-full max-w-4xl mx-auto px-6 py-6">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
         <div className="md:col-span-4 flex flex-col gap-4">
-          <div className="h-44 rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
+          <div className="h-44 rounded-2xl overflow-hidden relative bg-stone-800 group">
             <ImageWithSkeleton
               src={displayImages[0]}
               alt="Foto Galeri 1"
@@ -35,7 +35,7 @@ const Gallery = ({ student, photos }) => {
             />
           </div>
 
-          <div className="h-44 rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
+          <div className="h-44 rounded-2xl overflow-hidden relative bg-stone-800 group">
             <ImageWithSkeleton
               src={displayImages[1]}
               alt="Foto Galeri 2"
@@ -45,7 +45,7 @@ const Gallery = ({ student, photos }) => {
           </div>
         </div>
 
-        <div className="md:col-span-8 h-80 md:h-[368px] rounded-2xl overflow-hidden relative border border-stone-700 bg-stone-800 group">
+        <div className="md:col-span-8 h-80 md:h-[368px] rounded-2xl overflow-hidden relative bg-stone-800 group">
           <ImageWithSkeleton
             src={displayImages[2]}
             alt="Foto Galeri 3"
